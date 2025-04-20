@@ -1,0 +1,26 @@
+{
+    "name": "fast-forward/framework",
+    "description": "Fast Forward Framework is a lightweight and fast PHP framework designed for building modern web applications. It provides a simple and elegant API, making it easy to develop and maintain your projects.",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Felipe Sayão Lobato Abreu",
+            "email": "github@mentordosnerds.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "fast-forward/config": "^1.1",
+        "fast-forward/container": "^1.0"
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    }
+}
