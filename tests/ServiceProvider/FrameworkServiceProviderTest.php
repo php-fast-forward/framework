@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FastForward\Framework\ServiceProvider\Tests;
+namespace FastForward\Framework\Tests\ServiceProvider;
 
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
