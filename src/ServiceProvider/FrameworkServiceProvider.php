@@ -33,13 +33,8 @@ use Interop\Container\ServiceProviderInterface;
  * This class SHALL implement the ServiceProviderInterface and MUST delegate
  * its service discovery responsibilities to an internal AggregateServiceProvider.
  */
-final class FrameworkServiceProvider implements ServiceProviderInterface
+final class FrameworkServiceProvider extends AggregateServiceProvider
 {
-    /**
-     * @var ServiceProviderInterface the aggregate container for framework service providers
-     */
-    private ServiceProviderInterface $serviceProvider;
-
     /**
      * Constructs the FrameworkServiceProvider.
      *
@@ -48,43 +43,8 @@ final class FrameworkServiceProvider implements ServiceProviderInterface
      */
     public function __construct()
     {
-        $this->serviceProvider = new AggregateServiceProvider(
+        parent::__construct(
             new HttpServiceProvider(),
-            // ErrorHandlerServiceProvider,
-            // EventDispatcherServiceProvider,
-            // LoggerServiceProvider,
-            // CacheServiceProvider,
-            // ConsoleServiceProvider,
-            // TemplateRendererServiceProvider,
-            // SecurityServiceProvider,
-            // SessionServiceProvider,
-            // ...
         );
-    }
-
-    /**
-     * Returns an array of service factory callables.
-     *
-     * This method MUST delegate to the internal AggregateServiceProvider and
-     * return all service factories required for container instantiation.
-     *
-     * @return array<string, callable> an associative array of factory callables indexed by service IDs
-     */
-    public function getFactories(): array
-    {
-        return $this->serviceProvider->getFactories();
-    }
-
-    /**
-     * Returns an array of service extension callables.
-     *
-     * This method MUST delegate to the internal AggregateServiceProvider and
-     * return all service extensions used to decorate existing services.
-     *
-     * @return array<string, callable> an associative array of extension callables indexed by service IDs
-     */
-    public function getExtensions(): array
-    {
-        return $this->serviceProvider->getExtensions();
     }
 }

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace FastForward\Framework\Tests\ServiceProvider;
 
+use FastForward\Container\Factory\ServiceFactory;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+use FastForward\Http\ServiceProvider\HttpServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
@@ -23,22 +25,34 @@ final class FrameworkServiceProviderTest extends TestCase
 
     public function testGetFactoriesWillReturnHttpServiceProviderFactories(): void
     {
-        $factories = $this->provider->getFactories();
+        $expectedFactories = array_merge(
+            (new HttpServiceProvider())->getFactories(),
+            [FrameworkServiceProvider::class => new ServiceFactory($this->provider)]
+        );
 
-        self::assertIsArray($factories);
-        self::assertNotEmpty($factories);
-        foreach ($factories as $factory) {
-            self::assertIsCallable($factory);
+        $actualFactories = $this->provider->getFactories();
+
+        foreach ($expectedFactories as $id => $factory) {
+            self::assertArrayHasKey($id, $actualFactories);
+            self::assertIsCallable($actualFactories[$id]);
         }
+
+        self::assertSameSize($expectedFactories, $actualFactories);
     }
 
     public function testGetExtensionsWillReturnHttpServiceProviderExtensions(): void
     {
-        $extensions = $this->provider->getExtensions();
+        $expectedExtensions = array_merge(
+            (new HttpServiceProvider())->getExtensions(),
+        );
 
-        self::assertIsArray($extensions);
-        foreach ($extensions as $extension) {
-            self::assertIsCallable($extension);
+        $actualExtensions = $this->provider->getExtensions();
+
+        foreach ($expectedExtensions as $id => $extension) {
+            self::assertArrayHasKey($id, $actualExtensions);
+            self::assertIsCallable($actualExtensions[$id]);
         }
+
+        self::assertSameSize($expectedExtensions, $actualExtensions);
     }
 }
