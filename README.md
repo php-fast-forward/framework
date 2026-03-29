@@ -1,7 +1,7 @@
 # Fast Forward Framework
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![PHP Version](https://img.shields.io/badge/php-^8.2-blue.svg)](https://www.php.net/releases/)
+[![PHP Version](https://img.shields.io/badge/php-^8.3-blue.svg)](https://www.php.net/releases/)
 
 **Fast Forward Framework** is a lightweight and fast PHP framework designed for building modern web applications.  
 This package serves as an **aggregate metapackage**, bundling all core components of the Fast Forward ecosystem for easier installation and management.
@@ -10,7 +10,7 @@ This package serves as an **aggregate metapackage**, bundling all core component
 
 ## Features
 
-- 🚀 **Modern PHP 8.2+ syntax**
+- 🚀 **Modern PHP 8.3+ syntax**
 - 📦 Simplifies installation of all core packages in one step
 - 🧱 Provides a solid foundation for building scalable PHP applications
 

@@ -2,6 +2,20 @@
 
 declare(strict_types=1);
 
+/**
+ * This file is part of php-fast-forward/framework.
+ *
+ * This source file is subject to the license bundled
+ * with this source code in the file LICENSE.
+ *
+ * @copyright Copyright (c) 2025-2026 Felipe Sayão Lobato Abreu <github@mentordosnerds.com>
+ * @license   https://opensource.org/licenses/MIT MIT License
+ *
+ * @see       https://github.com/php-fast-forward/framework
+ * @see       https://github.com/php-fast-forward
+ * @see       https://datatracker.ietf.org/doc/html/rfc2119
+ */
+
 namespace FastForward\Framework\Tests\ServiceProvider;
 
 use FastForward\Container\Factory\ServiceFactory;
@@ -18,21 +32,29 @@ final class FrameworkServiceProviderTest extends TestCase
 
     private FrameworkServiceProvider $provider;
 
+    /**
+     * @return void
+     */
     protected function setUp(): void
     {
         $this->provider = new FrameworkServiceProvider();
     }
 
+    /**
+     * @return void
+     */
     public function testGetFactoriesWillReturnHttpServiceProviderFactories(): void
     {
         $expectedFactories = array_merge(
             (new HttpServiceProvider())->getFactories(),
-            [FrameworkServiceProvider::class => new ServiceFactory($this->provider)]
+            [
+                FrameworkServiceProvider::class => new ServiceFactory($this->provider),
+            ]
         );
 
         $actualFactories = $this->provider->getFactories();
 
-        foreach ($expectedFactories as $id => $factory) {
+        foreach (array_keys($expectedFactories) as $id) {
             self::assertArrayHasKey($id, $actualFactories);
             self::assertIsCallable($actualFactories[$id]);
         }
@@ -40,15 +62,16 @@ final class FrameworkServiceProviderTest extends TestCase
         self::assertSameSize($expectedFactories, $actualFactories);
     }
 
+    /**
+     * @return void
+     */
     public function testGetExtensionsWillReturnHttpServiceProviderExtensions(): void
     {
-        $expectedExtensions = array_merge(
-            (new HttpServiceProvider())->getExtensions(),
-        );
+        $expectedExtensions = array_merge((new HttpServiceProvider())->getExtensions());
 
         $actualExtensions = $this->provider->getExtensions();
 
-        foreach ($expectedExtensions as $id => $extension) {
+        foreach (array_keys($expectedExtensions) as $id) {
             self::assertArrayHasKey($id, $actualExtensions);
             self::assertIsCallable($actualExtensions[$id]);
         }
