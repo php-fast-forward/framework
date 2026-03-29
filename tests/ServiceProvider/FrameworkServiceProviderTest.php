@@ -22,6 +22,7 @@ use FastForward\Container\Factory\ServiceFactory;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use FastForward\Http\ServiceProvider\HttpServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 
@@ -43,7 +44,8 @@ final class FrameworkServiceProviderTest extends TestCase
     /**
      * @return void
      */
-    public function testGetFactoriesWillReturnHttpServiceProviderFactories(): void
+    #[Test]
+    public function getFactoriesWillReturnHttpServiceProviderFactories(): void
     {
         $expectedFactories = array_merge(
             (new HttpServiceProvider())->getFactories(),
@@ -65,7 +67,8 @@ final class FrameworkServiceProviderTest extends TestCase
     /**
      * @return void
      */
-    public function testGetExtensionsWillReturnHttpServiceProviderExtensions(): void
+    #[Test]
+    public function getExtensionsWillReturnHttpServiceProviderExtensions(): void
     {
         $expectedExtensions = array_merge((new HttpServiceProvider())->getExtensions());
 
