@@ -1,21 +1,79 @@
 Dependencies Documentation
 =========================
 
-Below are the main dependencies aggregated by the Fast Forward Framework, with links to their documentation:
+Below are the runtime dependencies installed by ``fast-forward/framework``. The first table is the
+most important one for beginners because it separates "installed" from "registered automatically".
 
-- `fast-forward/http <https://github.com/php-fast-forward/http>`_
-  - `Documentation <https://php-fast-forward.github.io/http/>`_
-- `fast-forward/http-factory <https://github.com/php-fast-forward/http-factory>`_
-  - `Documentation <https://php-fast-forward.github.io/http-factory/>`_
-- `fast-forward/http-message <https://github.com/php-fast-forward/http-message>`_
-  - `Documentation <https://php-fast-forward.github.io/http-message/>`_
-- `fast-forward/http-client <https://github.com/php-fast-forward/http-client>`_
-  - `Documentation <https://php-fast-forward.github.io/http-client/>`_
-- `fast-forward/config <https://github.com/php-fast-forward/config>`_
-  - `Documentation <https://php-fast-forward.github.io/config/>`_
-- `fast-forward/container <https://github.com/php-fast-forward/container>`_
-  - `Documentation <https://php-fast-forward.github.io/container/>`_
-- `fast-forward/defer <https://github.com/php-fast-forward/defer>`_
-  - `Documentation <https://php-fast-forward.github.io/defer/>`_
-- `fast-forward/iterators <https://github.com/php-fast-forward/iterators>`_
-  - `Documentation <https://php-fast-forward.github.io/iterators/>`_
+Direct runtime packages
+-----------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 24 36 20 20
+
+   * - Package
+     - Purpose
+     - Auto-registered by ``FrameworkServiceProvider``
+     - Documentation
+   * - ``fast-forward/container``
+     - Container composition, autowiring, and service-provider support
+     - No
+     - `Docs <https://github.com/php-fast-forward/container>`_
+   * - ``fast-forward/config``
+     - Configuration objects, directory loading, and config-backed container access
+     - No
+     - `Docs <https://github.com/php-fast-forward/config>`_
+   * - ``fast-forward/http``
+     - Aggregated HTTP stack for the framework provider
+     - Yes
+     - `Docs <https://php-fast-forward.github.io/http/>`_
+   * - ``fast-forward/defer``
+     - Deferred callback execution and middleware-friendly cleanup
+     - No
+     - `Docs <https://github.com/php-fast-forward/defer>`_
+   * - ``fast-forward/fork``
+     - Parallel worker orchestration for CLI applications
+     - No
+     - `Docs <https://github.com/php-fast-forward/fork>`_
+   * - ``fast-forward/iterators``
+     - Iterator utilities for chunking, grouping, lookahead, and data traversal
+     - No
+     - `Docs <https://github.com/php-fast-forward/iterators/tree/main/docs>`_
+
+Notable transitive packages behind the HTTP stack
+-------------------------------------------------
+
+``fast-forward/http`` brings in additional libraries that explain many of the service identifiers
+you resolve from the container:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 28 32 40
+
+   * - Package
+     - Role
+     - Notes
+   * - ``fast-forward/http-factory``
+     - Registers PSR-17 and Fast Forward response/stream factories
+     - This is where ``ResponseFactoryInterface`` and ``StreamFactoryInterface`` come from.
+   * - ``fast-forward/http-client``
+     - Registers the PSR-18 client
+     - Exposes ``Psr\Http\Client\ClientInterface`` backed by Symfony HttpClient.
+   * - ``fast-forward/http-message``
+     - Provides PSR-7 message implementations and response classes
+     - Used by the factory package for JSON, HTML, text, redirect, and empty responses.
+   * - ``nyholm/psr7`` and ``nyholm/psr7-server``
+     - Underlying PSR-7 implementation and server-request creation
+     - Power the PSR-17 aliases and ``ServerRequestInterface`` resolution.
+   * - ``symfony/http-client``
+     - HTTP transport for outgoing requests
+     - Used by the PSR-18 adapter registered in the HTTP client provider.
+
+Related standards
+-----------------
+
+- `PSR-7: HTTP Message Interfaces <https://www.php-fig.org/psr/psr-7/>`_
+- `PSR-11: Container Interface <https://www.php-fig.org/psr/psr-11/>`_
+- `PSR-17: HTTP Factories <https://www.php-fig.org/psr/psr-17/>`_
+- `PSR-18: HTTP Client <https://www.php-fig.org/psr/psr-18/>`_
+- `RFC 2119 <https://datatracker.ietf.org/doc/html/rfc2119>`_

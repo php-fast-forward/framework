@@ -1,9 +1,13 @@
 Getting Started
 ==============
 
-Welcome to the Fast Forward Framework!
+This section helps you move from installation to a working container bootstrap as quickly
+as possible.
 
-This section will guide you through the installation and initial setup of the framework.
+If you are evaluating the package for the first time, read the pages in this order:
+
+1. ``installation`` to understand what the metapackage installs.
+2. ``quickstart`` to wire the ``FrameworkServiceProvider`` into a real container.
 
 .. toctree::
    :maxdepth: 1
