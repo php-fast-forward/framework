@@ -19,6 +19,7 @@
         "fast-forward/config": "^1.4",
         "fast-forward/container": "^1.5",
         "fast-forward/defer": "^1.0",
+        "fast-forward/fork": "^1.0",
         "fast-forward/http": "^1.0",
         "fast-forward/iterators": "^1.0"
     },
@@ -41,7 +42,8 @@
             "ergebnis/composer-normalize": true,
             "fast-forward/dev-tools": true,
             "phpdocumentor/shim": true,
-            "phpro/grumphp": true
+            "phpro/grumphp": true,
+            "pyrech/composer-changelogs": true
         },
         "platform": {
             "php": "8.3.0"
