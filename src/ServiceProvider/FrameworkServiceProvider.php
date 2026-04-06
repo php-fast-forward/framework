@@ -19,18 +19,19 @@ declare(strict_types=1);
 namespace FastForward\Framework\ServiceProvider;
 
 use FastForward\Container\ServiceProvider\AggregateServiceProvider;
+use FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider;
 use FastForward\Http\ServiceProvider\HttpServiceProvider;
 
 /**
  * Class FrameworkServiceProvider.
  *
- * Aggregates core framework service providers into a unified service provider.
- * This class MUST be used to encapsulate all foundational service providers
- * required to initialize the application container.
+ * Aggregates the default Fast Forward framework service providers into a unified
+ * service provider. This class MUST be used to register the framework's
+ * baseline HTTP and event-dispatcher infrastructure in one step.
  *
- * The internal aggregation MAY include HTTP, logging, caching, console,
- * event dispatching, session handling, and other service providers required
- * for application infrastructure.
+ * The current aggregation includes:
+ * - {@see HttpServiceProvider} for the HTTP stack
+ * - {@see EventDispatcherServiceProvider} for PSR-14 and Symfony-compatible event dispatching
  *
  * This class SHALL implement the ServiceProviderInterface and MUST delegate
  * its service discovery responsibilities to an internal AggregateServiceProvider.
@@ -41,12 +42,13 @@ final class FrameworkServiceProvider extends AggregateServiceProvider
      * Constructs the FrameworkServiceProvider.
      *
      * This constructor MUST initialize the aggregate service provider using
-     * a composition of essential framework service providers.
+     * the framework's default HTTP and event-dispatcher service providers.
      */
     public function __construct()
     {
         parent::__construct(
             new HttpServiceProvider(),
+            new EventDispatcherServiceProvider(),
         );
     }
 }

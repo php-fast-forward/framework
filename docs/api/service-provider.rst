@@ -4,8 +4,9 @@ FrameworkServiceProvider
 .. php:class:: FastForward\Framework\ServiceProvider\FrameworkServiceProvider
 
    Aggregates the default Fast Forward framework providers into a single container entry point.
-   In the current package, it composes the HTTP stack by delegating to
-   ``FastForward\Http\ServiceProvider\HttpServiceProvider``.
+   In the current package, it composes the HTTP stack and the event-dispatcher stack by delegating
+   to ``FastForward\Http\ServiceProvider\HttpServiceProvider`` and
+   ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``.
 
    The class extends ``FastForward\Container\ServiceProvider\AggregateServiceProvider``,
    so it inherits the provider-merging behavior used across the ecosystem.
@@ -25,6 +26,8 @@ What it aggregates
 
 - ``FastForward\Http\ServiceProvider\HttpServiceProvider``
 - Through that provider, the HTTP message factories and HTTP client service providers
+- ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``
+- Through that provider, the PSR-14 dispatcher, Symfony contracts dispatcher alias, and listener-provider services
 
 Important behavior inherited from ``AggregateServiceProvider``
 --------------------------------------------------------------
@@ -46,6 +49,6 @@ Current scope
 -------------
 
 Although the metapackage installs multiple libraries, this local service provider currently wires
-the HTTP stack only. Packages such as ``fast-forward/config``, ``fast-forward/defer``,
-``fast-forward/fork``, and ``fast-forward/iterators`` remain available through Composer autoloading
-and can be introduced into your application as needed.
+the HTTP and event-dispatcher stacks only. Packages such as ``fast-forward/config``,
+``fast-forward/defer``, ``fast-forward/fork``, and ``fast-forward/iterators`` remain available
+through Composer autoloading and can be introduced into your application as needed.

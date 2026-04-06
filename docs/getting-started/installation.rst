@@ -8,7 +8,7 @@ Install the metapackage with Composer:
    composer require fast-forward/framework
 
 This single command installs the Fast Forward container, configuration helpers, HTTP stack,
-deferred callback utilities, iterator helpers, and process-management tools.
+event-dispatcher stack, deferred callback utilities, iterator helpers, and process-management tools.
 
 Requirements
 ------------
@@ -38,6 +38,9 @@ one local service provider class, while Composer pulls in the runtime libraries 
    * - ``fast-forward/http``
      - Aggregated HTTP stack for PSR-7, PSR-17, and PSR-18 usage
      - Yes
+   * - ``fast-forward/event-dispatcher``
+     - PSR-14 event dispatching, listener aggregation, and Symfony-contract compatibility
+     - Yes
    * - ``fast-forward/defer``
      - Deferred callback helpers and middleware-oriented cleanup workflows
      - No
@@ -51,9 +54,20 @@ one local service provider class, while Composer pulls in the runtime libraries 
 .. note::
 
    Installing a package and registering its services are different concerns here.
-   ``FrameworkServiceProvider`` currently wires the HTTP stack into the container.
+   ``FrameworkServiceProvider`` currently wires the HTTP and event-dispatcher stacks into the
+   container.
    The other installed packages remain available to your application through Composer autoloading,
    but you use their classes and helper functions directly unless you register them yourself.
+
+Optional event-dispatcher integration
+-------------------------------------
+
+If your application wants Symfony-style subscribers or ``#[AsEventListener]`` attributes explicitly,
+add the component package to your application as well:
+
+.. code-block:: bash
+
+   composer require symfony/event-dispatcher
 
 Recommended next step
 ---------------------

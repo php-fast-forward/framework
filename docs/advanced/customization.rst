@@ -70,8 +70,38 @@ Documented limitations
 
 - This package does not define framework-specific aliases or facades of its own.
 - The convenience aliases and helper factories live in the downstream HTTP factory package.
+- Listener registration for the event-dispatcher stack is driven by the
+  ``Psr\EventDispatcher\ListenerProviderInterface`` configuration entry.
 - If you need additional providers for config-driven applications, register them explicitly or
   list them in ``FastForward\Container\ContainerInterface::class`` inside your config object.
+
+Customize event listener registration
+-------------------------------------
+
+You can extend the framework's event behavior without replacing the framework provider itself:
+
+.. code-block:: php
+
+   use FastForward\Config\ArrayConfig;
+   use FastForward\Container\ContainerInterface;
+   use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+   use Psr\EventDispatcher\ListenerProviderInterface;
+   use function FastForward\Container\container;
+
+   $config = new ArrayConfig([
+       ContainerInterface::class => [
+           FrameworkServiceProvider::class,
+       ],
+       ListenerProviderInterface::class => [
+           SendWelcomeEmailListener::class,
+           AuditTrailListenerProvider::class,
+       ],
+   ]);
+
+   $container = container($config);
+
+This lets you mix invokable listeners, subscriber classes, attributed listeners, and custom
+listener-provider implementations without replacing the framework's default dispatcher wiring.
 
 Good customization defaults for new projects
 --------------------------------------------

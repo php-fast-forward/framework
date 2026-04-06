@@ -6,12 +6,13 @@ Documentation
 
 **Fast Forward Framework** is the metapackage entry point for the Fast Forward ecosystem.
 It installs the core libraries you are most likely to need first and exposes a single
-``FrameworkServiceProvider`` that bootstraps the HTTP stack inside a Fast Forward container.
+``FrameworkServiceProvider`` that bootstraps the HTTP and event-dispatcher stacks inside a
+Fast Forward container.
 
 This package is especially useful when you want one Composer dependency that gives you:
 
 - a PSR-11 friendly container workflow
-- the Fast Forward HTTP service-provider stack
+- the Fast Forward HTTP and event-dispatcher service-provider stacks
 - access to supporting packages such as configuration, deferred callbacks, iterators, and process tools
 
 What this package does
@@ -19,14 +20,16 @@ What this package does
 
 - Installs the main Fast Forward runtime packages in one step.
 - Provides ``FastForward\Framework\ServiceProvider\FrameworkServiceProvider`` as the local bootstrap class.
-- Aggregates ``FastForward\Http\ServiceProvider\HttpServiceProvider``, which then exposes HTTP factories and the PSR-18 client.
+- Aggregates ``FastForward\Http\ServiceProvider\HttpServiceProvider`` and
+  ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``.
 
 What this package does not do
 -----------------------------
 
 - It does not generate a full application skeleton or project structure.
 - It does not register every installed package in the container automatically.
-- It does not replace the package-level documentation of ``fast-forward/http``, ``fast-forward/config``, or the other ecosystem libraries.
+- It does not replace the package-level documentation of ``fast-forward/http``,
+  ``fast-forward/event-dispatcher``, ``fast-forward/config``, or the other ecosystem libraries.
 
 If you are new to the ecosystem, start with :doc:`getting-started/installation` and then move to
 :doc:`getting-started/quickstart`.

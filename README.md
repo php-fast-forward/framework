@@ -3,7 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/php-^8.3-blue.svg)](https://www.php.net/releases/)
 
-**Fast Forward Framework** is a lightweight and fast PHP framework designed for building modern web applications.  
+**Fast Forward Framework** is a lightweight and fast PHP framework designed for building modern web
+and event-driven applications.
 This package serves as an **aggregate metapackage**, bundling all core components of the Fast Forward ecosystem for easier installation and management.
 
 ---
@@ -12,7 +13,28 @@ This package serves as an **aggregate metapackage**, bundling all core component
 
 - 🚀 **Modern PHP 8.3+ syntax**
 - 📦 Simplifies installation of all core packages in one step
+- 🔌 Registers the Fast Forward HTTP and event-dispatcher stacks through a single framework provider
 - 🧱 Provides a solid foundation for building scalable PHP applications
+
+## Usage
+
+```php
+<?php
+
+declare(strict_types=1);
+
+use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+use function FastForward\Container\container;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$container = container(new FrameworkServiceProvider());
+
+$responseFactory = $container->get(ResponseFactoryInterface::class);
+$dispatcher = $container->get(EventDispatcherInterface::class);
+```
 
 ---
 
@@ -30,7 +52,7 @@ This command will automatically pull in all the required dependencies of the fra
 
 ## Requirements
 
-- PHP 8.1 or higher
+- PHP 8.3 or higher
 
 ---
 

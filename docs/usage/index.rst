@@ -10,4 +10,5 @@ which features are wired automatically.
 
    getting-services
    http-services
+   event-dispatching
    use-cases

@@ -27,6 +27,10 @@ Direct runtime packages
      - Aggregated HTTP stack for the framework provider
      - Yes
      - `Docs <https://php-fast-forward.github.io/http/>`_
+   * - ``fast-forward/event-dispatcher``
+     - PSR-14 event dispatching, listener aggregation, and Symfony-contract compatibility
+     - Yes
+     - `Docs <https://github.com/php-fast-forward/event-dispatcher>`_
    * - ``fast-forward/defer``
      - Deferred callback execution and middleware-friendly cleanup
      - No
@@ -40,8 +44,8 @@ Direct runtime packages
      - No
      - `Docs <https://github.com/php-fast-forward/iterators/tree/main/docs>`_
 
-Notable transitive packages behind the HTTP stack
--------------------------------------------------
+Notable transitive packages behind the registered stacks
+--------------------------------------------------------
 
 ``fast-forward/http`` brings in additional libraries that explain many of the service identifiers
 you resolve from the container:
@@ -69,11 +73,31 @@ you resolve from the container:
      - HTTP transport for outgoing requests
      - Used by the PSR-18 adapter registered in the HTTP client provider.
 
+``fast-forward/event-dispatcher`` also brings in important integration layers:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 28 32 40
+
+   * - Package
+     - Role
+     - Notes
+   * - ``phly/phly-event-dispatcher``
+     - Listener-provider implementations
+     - Supplies the aggregate and prioritized listener-provider building blocks.
+   * - ``symfony/event-dispatcher-contracts``
+     - Symfony contracts bridge
+     - Allows the same dispatcher to be resolved through Symfony's dispatcher interface.
+   * - ``symfony/event-dispatcher``
+     - Optional subscriber and attribute workflow support
+     - Install it in your application if you want ``EventSubscriberInterface`` or ``#[AsEventListener]`` usage.
+
 Related standards
 -----------------
 
 - `PSR-7: HTTP Message Interfaces <https://www.php-fig.org/psr/psr-7/>`_
 - `PSR-11: Container Interface <https://www.php-fig.org/psr/psr-11/>`_
+- `PSR-14: Event Dispatcher <https://www.php-fig.org/psr/psr-14/>`_
 - `PSR-17: HTTP Factories <https://www.php-fig.org/psr/psr-17/>`_
 - `PSR-18: HTTP Client <https://www.php-fig.org/psr/psr-18/>`_
 - `RFC 2119 <https://datatracker.ietf.org/doc/html/rfc2119>`_

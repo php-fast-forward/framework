@@ -2,7 +2,7 @@ Compatibility
 =============
 
 The table below reflects the constraints declared in this repository's ``composer.json`` on
-April 5, 2026.
+April 6, 2026.
 
 Runtime compatibility summary
 -----------------------------
@@ -23,6 +23,8 @@ Runtime compatibility summary
      - PSR-7 and PSR-17 through the aggregated HTTP packages
    * - HTTP client
      - PSR-18 through the aggregated HTTP client package
+   * - Event dispatching
+     - PSR-14 and Symfony contracts through ``fast-forward/event-dispatcher``
    * - Fork support
      - Unix-like CLI runtime with ``pcntl`` and ``posix`` support when using ``fast-forward/fork``
 
@@ -30,6 +32,9 @@ Practical compatibility notes
 -----------------------------
 
 - ``ServerRequestInterface`` is created from globals, so it is most natural in web runtimes.
+- The event dispatcher resolves even without listener configuration; configured listeners are optional.
+- Install ``symfony/event-dispatcher`` in your application if you want subscriber interfaces or
+  ``#[AsEventListener]``-driven listener registration.
 - CLI tools and tests should build requests explicitly with ``RequestFactoryInterface``.
 - The package is safe to install even if you never use ``fast-forward/fork``; the runtime caveat
   only matters when you choose to use that library.

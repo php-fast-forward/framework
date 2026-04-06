@@ -1,8 +1,8 @@
 HTTP Services
 =============
 
-``FrameworkServiceProvider`` is mainly about making the HTTP stack available quickly. This page
-shows the most practical workflows that become possible immediately after registration.
+This page covers the HTTP half of ``FrameworkServiceProvider``. For event-related services, see
+:doc:`event-dispatching`.
 
 Read the incoming request
 -------------------------

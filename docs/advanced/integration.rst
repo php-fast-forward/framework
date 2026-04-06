@@ -28,6 +28,7 @@ container helper:
    use FastForward\Config\ArrayConfig;
    use FastForward\Container\ContainerInterface;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+   use Psr\EventDispatcher\ListenerProviderInterface;
    use function FastForward\Container\container;
 
    $config = new ArrayConfig([
@@ -35,12 +36,18 @@ container helper:
            FrameworkServiceProvider::class,
            AppServiceProvider::class,
        ],
+       ListenerProviderInterface::class => [
+           SendWelcomeEmailListener::class,
+       ],
    ]);
 
    $container = container($config);
 
 This keeps environment-specific providers in one place and works well with the rest of the
 configuration package.
+
+The listener-provider configuration entry is optional, but it is the standard way to add event
+listeners, subscribers, attributed listeners, or custom listener-provider classes.
 
 HTTP runtime versus CLI runtime
 -------------------------------
@@ -79,3 +86,19 @@ contracts instead of framework-specific implementations:
 
 This keeps your domain services portable even when you rely on the Fast Forward ecosystem for
 bootstrap and defaults.
+
+Event-driven services
+---------------------
+
+The same portability guideline applies to event-driven code:
+
+.. code-block:: php
+
+   use Psr\EventDispatcher\EventDispatcherInterface;
+
+   final readonly class UserRegistrationService
+   {
+       public function __construct(
+           private EventDispatcherInterface $dispatcher,
+       ) {}
+   }

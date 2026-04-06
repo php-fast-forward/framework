@@ -16,6 +16,7 @@ Minimal bootstrap
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use FastForward\Http\Message\Factory\ResponseFactoryInterface;
    use function FastForward\Container\container;
+   use Psr\EventDispatcher\EventDispatcherInterface;
    use Psr\Http\Client\ClientInterface;
    use Psr\Http\Message\ServerRequestInterface;
 
@@ -26,11 +27,13 @@ Minimal bootstrap
    $request = $container->get(ServerRequestInterface::class);
    $responseFactory = $container->get(ResponseFactoryInterface::class);
    $client = $container->get(ClientInterface::class);
+   $dispatcher = $container->get(EventDispatcherInterface::class);
 
    $response = $responseFactory->createResponseFromPayload([
        'method' => $request->getMethod(),
        'path' => $request->getUri()->getPath(),
        'http_client_ready' => $client::class,
+       'event_dispatcher_ready' => $dispatcher::class,
    ]);
 
    // $response is now a PSR-7 response ready to be returned by your application.
@@ -41,6 +44,7 @@ What this bootstrap gives you
 - ``ServerRequestInterface`` resolved from the current PHP globals.
 - ``FastForward\Http\Message\Factory\ResponseFactoryInterface`` for JSON, HTML, text, redirect, and empty responses.
 - ``Psr\Http\Client\ClientInterface`` backed by Symfony's PSR-18 client integration.
+- ``Psr\EventDispatcher\EventDispatcherInterface`` for PSR-14 event dispatching.
 
 Why the helper looks like this
 ------------------------------

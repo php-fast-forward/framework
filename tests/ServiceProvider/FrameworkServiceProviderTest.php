@@ -19,18 +19,16 @@ declare(strict_types=1);
 namespace FastForward\Framework\Tests\ServiceProvider;
 
 use FastForward\Container\Factory\ServiceFactory;
+use FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use FastForward\Http\ServiceProvider\HttpServiceProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
 
 #[CoversClass(FrameworkServiceProvider::class)]
 final class FrameworkServiceProviderTest extends TestCase
 {
-    use ProphecyTrait;
-
     private FrameworkServiceProvider $provider;
 
     /**
@@ -45,11 +43,16 @@ final class FrameworkServiceProviderTest extends TestCase
      * @return void
      */
     #[Test]
-    public function getFactoriesWillReturnHttpServiceProviderFactories(): void
+    public function getFactoriesWillReturnAggregatedServiceProviderFactories(): void
     {
+        $eventDispatcherServiceProvider = new EventDispatcherServiceProvider();
+        $httpServiceProvider = new HttpServiceProvider();
+
         $expectedFactories = array_merge(
-            (new HttpServiceProvider())->getFactories(),
+            $httpServiceProvider->getFactories(),
+            $eventDispatcherServiceProvider->getFactories(),
             [
+                EventDispatcherServiceProvider::class => new ServiceFactory($eventDispatcherServiceProvider),
                 FrameworkServiceProvider::class => new ServiceFactory($this->provider),
             ]
         );
@@ -68,9 +71,12 @@ final class FrameworkServiceProviderTest extends TestCase
      * @return void
      */
     #[Test]
-    public function getExtensionsWillReturnHttpServiceProviderExtensions(): void
+    public function getExtensionsWillReturnAggregatedServiceProviderExtensions(): void
     {
-        $expectedExtensions = array_merge((new HttpServiceProvider())->getExtensions());
+        $expectedExtensions = array_merge(
+            (new HttpServiceProvider())->getExtensions(),
+            (new EventDispatcherServiceProvider())->getExtensions(),
+        );
 
         $actualExtensions = $this->provider->getExtensions();
 

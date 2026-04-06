@@ -19,6 +19,48 @@ Bootstrap an application container
 
 This is the default starting point for web applications and small prototypes.
 
+Build an event-driven application workflow
+------------------------------------------
+
+.. code-block:: php
+
+   use FastForward\Config\ArrayConfig;
+   use FastForward\Container\ContainerInterface;
+   use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+   use Psr\EventDispatcher\EventDispatcherInterface;
+   use Psr\EventDispatcher\ListenerProviderInterface;
+   use function FastForward\Container\container;
+
+   final readonly class UserRegistered
+   {
+       public function __construct(public string $email) {}
+   }
+
+   final class SendWelcomeEmailListener
+   {
+       public function __invoke(UserRegistered $event): void
+       {
+           // Send the email.
+       }
+   }
+
+   $config = new ArrayConfig([
+       ContainerInterface::class => [
+           FrameworkServiceProvider::class,
+       ],
+       ListenerProviderInterface::class => [
+           SendWelcomeEmailListener::class,
+       ],
+   ]);
+
+   $container = container($config);
+   $dispatcher = $container->get(EventDispatcherInterface::class);
+
+   $dispatcher->dispatch(new UserRegistered('demo@example.com'));
+
+This is the most common pattern when your application starts mixing HTTP entry points with
+domain events.
+
 Register your application services next to the framework
 --------------------------------------------------------
 

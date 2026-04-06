@@ -30,8 +30,9 @@ Run:
 What does ``FrameworkServiceProvider`` register automatically?
 --------------------------------------------------------------
 
-Today it registers the Fast Forward HTTP stack by aggregating
-``FastForward\Http\ServiceProvider\HttpServiceProvider``.
+Today it registers the Fast Forward HTTP and event-dispatcher stacks by aggregating
+``FastForward\Http\ServiceProvider\HttpServiceProvider`` and
+``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``.
 
 Are all installed packages automatically available from the container?
 ---------------------------------------------------------------------
@@ -65,6 +66,26 @@ Resolve ``FastForward\Http\Message\Factory\ResponseFactoryInterface`` from the c
 convenience methods such as ``createResponseFromPayload()``, ``createResponseFromHtml()``,
 ``createResponseFromText()``, ``createResponseRedirect()``, and ``createResponseNoContent()``.
 
+How do I dispatch events?
+-------------------------
+
+Resolve ``Psr\EventDispatcher\EventDispatcherInterface`` or
+``Symfony\Contracts\EventDispatcher\EventDispatcherInterface`` from the container and call
+``dispatch($event)``.
+
+How do I register listeners?
+----------------------------
+
+Pass a config object into ``container()`` and place your listeners under the
+``Psr\EventDispatcher\ListenerProviderInterface`` key. The event-dispatcher package classifies the
+configured entries automatically.
+
+Do I need extra dependencies for Symfony subscribers or ``#[AsEventListener]``?
+--------------------------------------------------------------------------------
+
+If your application uses ``Symfony\Component\EventDispatcher\EventSubscriberInterface`` or
+``#[AsEventListener]`` explicitly, add ``symfony/event-dispatcher`` to your application.
+
 Can I send outgoing HTTP requests?
 ----------------------------------
 
@@ -92,5 +113,5 @@ Where should I look for package-specific details?
 -------------------------------------------------
 
 Start with :doc:`links/dependencies`. When you need deeper detail about one subsystem, continue to
-that package's own documentation, especially ``fast-forward/http``, ``fast-forward/http-factory``,
-and ``fast-forward/container``.
+that package's own documentation, especially ``fast-forward/http``,
+``fast-forward/event-dispatcher``, ``fast-forward/http-factory``, and ``fast-forward/container``.

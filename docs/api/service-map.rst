@@ -20,12 +20,18 @@ Framework-level classes and providers
    * - ``FastForward\Http\ServiceProvider\HttpServiceProvider``
      - ``fast-forward/http``
      - Aggregates HTTP message-factory and HTTP client providers
+   * - ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``
+     - ``fast-forward/event-dispatcher``
+     - Registers the PSR-14 dispatcher, Symfony contracts alias, and listener-provider services
    * - ``FastForward\Http\Message\Factory\ServiceProvider\HttpMessageFactoryServiceProvider``
      - ``fast-forward/http-factory``
      - Registers PSR-17 factories, convenience factories, and ``ServerRequestInterface``
    * - ``FastForward\Http\Client\ServiceProvider\HttpClientServiceProvider``
      - ``fast-forward/http-client``
      - Registers the PSR-18 client and Symfony HttpClient entry point
+   * - ``FastForward\EventDispatcher\EventDispatcher``
+     - ``fast-forward/event-dispatcher``
+     - Concrete dispatcher implementation behind the PSR-14 and Symfony contracts interfaces
 
 Installed entry points outside the framework provider
 -----------------------------------------------------
@@ -59,7 +65,7 @@ framework package, even though they are not auto-registered by ``FrameworkServic
 How to read this map
 --------------------
 
-- If you need container-resolved HTTP services, start with ``FrameworkServiceProvider``.
+- If you need container-resolved HTTP or event services, start with ``FrameworkServiceProvider``.
 - If you need configuration, deferred callbacks, iterators, or process tools, use those packages
   directly through their own APIs.
 - If you want to add more services into the container, register your own service provider after the
