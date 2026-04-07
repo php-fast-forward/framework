@@ -32,6 +32,9 @@ Framework-level classes and providers
    * - ``FastForward\EventDispatcher\EventDispatcher``
      - ``fast-forward/event-dispatcher``
      - Concrete dispatcher implementation behind the PSR-14 and Symfony contracts interfaces
+   * - ``FastForward\Clock\ServiceProvider\ClockServiceProvider``
+     - ``fast-forward/clock``
+     - Registers the PSR-20 clock, a system clock implementation, and timezone factory
 
 Installed entry points outside the framework provider
 -----------------------------------------------------

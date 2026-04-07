@@ -18,6 +18,7 @@ declare(strict_types=1);
 
 namespace FastForward\Framework\Tests\ServiceProvider;
 
+use FastForward\Clock\ServiceProvider\ClockServiceProvider;
 use FastForward\Container\Factory\ServiceFactory;
 use FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
@@ -47,12 +48,15 @@ final class FrameworkServiceProviderTest extends TestCase
     {
         $eventDispatcherServiceProvider = new EventDispatcherServiceProvider();
         $httpServiceProvider = new HttpServiceProvider();
+        $clockServiceProvider = new ClockServiceProvider();
 
         $expectedFactories = array_merge(
             $httpServiceProvider->getFactories(),
             $eventDispatcherServiceProvider->getFactories(),
+            $clockServiceProvider->getFactories(),
             [
                 EventDispatcherServiceProvider::class => new ServiceFactory($eventDispatcherServiceProvider),
+                ClockServiceProvider::class => new ServiceFactory(new ClockServiceProvider()),
                 FrameworkServiceProvider::class => new ServiceFactory($this->provider),
             ]
         );
@@ -76,6 +80,7 @@ final class FrameworkServiceProviderTest extends TestCase
         $expectedExtensions = array_merge(
             (new HttpServiceProvider())->getExtensions(),
             (new EventDispatcherServiceProvider())->getExtensions(),
+            (new ClockServiceProvider())->getExtensions(),
         );
 
         $actualExtensions = $this->provider->getExtensions();

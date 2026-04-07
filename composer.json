@@ -16,6 +16,7 @@
     },
     "require": {
         "php": "^8.3",
+        "fast-forward/clock": "^1.0",
         "fast-forward/config": "^1.4",
         "fast-forward/container": "^1.5",
         "fast-forward/defer": "^1.0",

@@ -4,9 +4,10 @@ FrameworkServiceProvider
 .. php:class:: FastForward\Framework\ServiceProvider\FrameworkServiceProvider
 
    Aggregates the default Fast Forward framework providers into a single container entry point.
-   In the current package, it composes the HTTP stack and the event-dispatcher stack by delegating
-   to ``FastForward\Http\ServiceProvider\HttpServiceProvider`` and
-   ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``.
+   In the current package, it composes the HTTP stack, the event-dispatcher stack, and the clock utilities
+   by delegating to ``FastForward\Http\ServiceProvider\HttpServiceProvider``,
+   ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``, and
+   ``FastForward\Clock\ServiceProvider\ClockServiceProvider``.
 
    The class extends ``FastForward\Container\ServiceProvider\AggregateServiceProvider``,
    so it inherits the provider-merging behavior used across the ecosystem.
@@ -28,6 +29,8 @@ What it aggregates
 - Through that provider, the HTTP message factories and HTTP client service providers
 - ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``
 - Through that provider, the PSR-14 dispatcher, Symfony contracts dispatcher alias, and listener-provider services
+- ``FastForward\Clock\ServiceProvider\ClockServiceProvider``
+- Through that provider, the PSR-20 clock, a system clock implementation, and timezone factory
 
 Important behavior inherited from ``AggregateServiceProvider``
 --------------------------------------------------------------
@@ -48,7 +51,12 @@ Constructor
 Current scope
 -------------
 
-Although the metapackage installs multiple libraries, this local service provider currently wires
-the HTTP and event-dispatcher stacks only. Packages such as ``fast-forward/config``,
-``fast-forward/defer``, ``fast-forward/fork``, and ``fast-forward/iterators`` remain available
-through Composer autoloading and can be introduced into your application as needed.
+The framework provider wires three main stacks:
+
+- HTTP (via ``HttpServiceProvider``)
+- Event-dispatching (via ``EventDispatcherServiceProvider``)
+- Clock/time utilities (via ``ClockServiceProvider``)
+
+Packages such as ``fast-forward/config``, ``fast-forward/defer``, ``fast-forward/fork``, and
+``fast-forward/iterators`` remain available through Composer autoloading and can be introduced
+into your application as needed.
