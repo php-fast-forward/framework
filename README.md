@@ -2,6 +2,12 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![PHP Version](https://img.shields.io/badge/php-^8.3-blue.svg)](https://www.php.net/releases/)
+[![PSR-7](https://img.shields.io/badge/PSR_7-http--message-777bb4.svg)](https://www.php-fig.org/psr/psr-7/)
+[![PSR-11](https://img.shields.io/badge/PSR--11-container-777bb4.svg)](https://www.php-fig.org/psr/psr-11/)
+[![PSR-14](https://img.shields.io/badge/PSR--14-event--dispatcher-777bb4.svg)](https://www.php-fig.org/psr/psr-14/)
+[![PSR-17](https://img.shields.io/badge/PSR_17-http--factory-777bb4.svg)](https://www.php-fig.org/psr/psr-7/)
+[![PSR-18](https://img.shields.io/badge/PSR_18-http--client-777bb4.svg)](https://www.php-fig.org/psr/psr-7/)
+[![PSR-20](https://img.shields.io/badge/PSR--20-clock-777bb4.svg)](https://www.php-fig.org/psr/psr-20/)
 
 **Fast Forward Framework** is a lightweight and fast PHP framework designed for building modern web
 and event-driven applications.
@@ -25,6 +31,7 @@ declare(strict_types=1);
 
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use function FastForward\Container\container;
+use Psr\Clock\ClockInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
@@ -34,6 +41,7 @@ $container = container(new FrameworkServiceProvider());
 
 $responseFactory = $container->get(ResponseFactoryInterface::class);
 $dispatcher = $container->get(EventDispatcherInterface::class);
+$clock = $container->get(ClockInterface::class);
 ```
 
 ---
