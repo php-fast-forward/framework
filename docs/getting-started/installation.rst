@@ -8,7 +8,7 @@ Install the metapackage with Composer:
    composer require fast-forward/framework
 
 This single command installs the Fast Forward container, configuration helpers, HTTP stack,
-event-dispatcher stack, deferred callback utilities, iterator helpers, and process-management tools.
+event-dispatcher stack, deferred callback utilities, enum helpers, iterator helpers, and process-management tools.
 
 Requirements
 ------------
@@ -46,6 +46,9 @@ one local service provider class, while Composer pulls in the runtime libraries 
      - No
    * - ``fast-forward/fork``
      - Parallel worker orchestration for CLI workloads
+     - No
+   * - ``fast-forward/enum``
+     - Enum and value-object helper abstractions for explicit domain modeling
      - No
    * - ``fast-forward/iterators``
      - Iterator utilities for grouping, chunking, lookahead, and related data flows

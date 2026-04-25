@@ -64,6 +64,7 @@ $clock = $container->get(ClockInterface::class);
 ## 🔌 Package Surface
 
 - `FastForward\Framework\ServiceProvider\FrameworkServiceProvider`
+- `fast-forward/enum` (enum utilities and value object helpers included by composition)
 - Core HTTP and event-dispatcher service provider orchestration
 - Shared configuration and lifecycle defaults for core packages in the ecosystem
 

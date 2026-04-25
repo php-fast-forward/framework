@@ -39,6 +39,10 @@ Direct runtime packages
      - Parallel worker orchestration for CLI applications
      - No
      - `Docs <https://github.com/php-fast-forward/fork>`_
+   * - ``fast-forward/enum``
+     - Enum abstractions and value-object helpers for safer domain modeling
+     - No
+     - `Docs <https://github.com/php-fast-forward/enum>`_
    * - ``fast-forward/iterators``
      - Iterator utilities for chunking, grouping, lookahead, and data traversal
      - No
