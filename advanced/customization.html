@@ -826,11 +826,12 @@ providers around <code>FrameworkServiceProvider</code>
 
             <pre><code class="language-php">use App\ServiceProvider\AppServiceProvider;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
 $container = container(
-    new FrameworkServiceProvider(),
-    new AppServiceProvider(),
+    FrameworkServiceProvider::class,
+    AppServiceProvider::class,
 );</code></pre>
 
             
@@ -921,6 +922,7 @@ list them in <code>FastForward\Container\ContainerInterface::class</code>
 use FastForward\Container\ContainerInterface;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use Psr\EventDispatcher\ListenerProviderInterface;
+
 use function FastForward\Container\container;
 
 $config = new ArrayConfig([

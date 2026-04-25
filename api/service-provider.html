@@ -833,9 +833,10 @@ so it inherits the provider-merging behavior used across the ecosystem.</p>
             <h2>Usage</h2>
 
             <pre><code class="language-php">use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
-$container = container(new FrameworkServiceProvider());</code></pre>
+$container = container(FrameworkServiceProvider::class);</code></pre>
 
     </section>
 

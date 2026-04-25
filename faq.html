@@ -887,9 +887,10 @@ container by <code>FrameworkServiceProvider</code>
 :</p>
 
             <pre><code class="language-php">use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
-$container = container(new FrameworkServiceProvider());</code></pre>
+$container = container(FrameworkServiceProvider::class);</code></pre>
 
     </section>
 

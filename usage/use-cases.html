@@ -831,9 +831,10 @@ between:</p>
             <h2>Bootstrap an application container</h2>
 
             <pre><code class="language-php">use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
-$container = container(new FrameworkServiceProvider());</code></pre>
+$container = container(FrameworkServiceProvider::class);</code></pre>
 
             
     <p>This is the default starting point for web applications and small prototypes.</p>
@@ -848,6 +849,7 @@ use FastForward\Container\ContainerInterface;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\EventDispatcher\ListenerProviderInterface;
+
 use function FastForward\Container\container;
 
 final readonly class UserRegistered
@@ -888,11 +890,12 @@ domain events.</p>
 
             <pre><code class="language-php">use App\ServiceProvider\AppServiceProvider;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
 $container = container(
-    new FrameworkServiceProvider(),
-    new AppServiceProvider(),
+    FrameworkServiceProvider::class,
+    AppServiceProvider::class,
 );</code></pre>
 
             
@@ -908,6 +911,7 @@ service identifiers.</p>
 use FastForward\Config\ArrayConfig;
 use FastForward\Container\ContainerInterface;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
 $config = new ArrayConfig([
