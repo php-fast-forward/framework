@@ -24,7 +24,7 @@ Documentation
 
       - a PSR-11 friendly container workflow
       - the Fast Forward HTTP and event-dispatcher service-provider stacks
-      - access to supporting packages such as configuration, deferred callbacks, iterators, and process tools
+      - access to supporting packages such as configuration, deferred callbacks, enum helpers, iterators, and process tools
 
    .. container:: col-lg-5 text-center
 

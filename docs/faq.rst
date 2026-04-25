@@ -38,8 +38,8 @@ Are all installed packages automatically available from the container?
 ---------------------------------------------------------------------
 
 No. ``fast-forward/config``, ``fast-forward/defer``, ``fast-forward/fork``, and
-``fast-forward/iterators`` are installed, but they are not automatically registered in the
-container by ``FrameworkServiceProvider``.
+``fast-forward/iterators`` and ``fast-forward/enum`` are installed, but they are not
+automatically registered in the container by ``FrameworkServiceProvider``.
 
 How do I build the container?
 -----------------------------
