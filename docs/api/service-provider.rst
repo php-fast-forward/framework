@@ -18,9 +18,10 @@ Usage
 .. code-block:: php
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
 What it aggregates
 ------------------

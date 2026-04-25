@@ -46,14 +46,15 @@ Requirements:
 declare(strict_types=1);
 
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
-use function FastForward\Container\container;
 use Psr\Clock\ClockInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 
+use function FastForward\Container\container;
+
 require __DIR__ . '/vendor/autoload.php';
 
-$container = container(new FrameworkServiceProvider());
+$container = container([FrameworkServiceProvider::class]);
 
 $responseFactory = $container->get(ResponseFactoryInterface::class);
 $dispatcher = $container->get(EventDispatcherInterface::class);
