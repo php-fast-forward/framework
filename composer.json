@@ -31,6 +31,7 @@
         "fast-forward/config": "^1.4",
         "fast-forward/container": "^1.5",
         "fast-forward/defer": "^1.0",
+        "fast-forward/enum": "^0.1",
         "fast-forward/event-dispatcher": "^1.0",
         "fast-forward/fork": "^1.0",
         "fast-forward/http": "^1.0",
