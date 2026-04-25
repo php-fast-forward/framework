@@ -13,9 +13,10 @@ Bootstrap an application container
 .. code-block:: php
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
 This is the default starting point for web applications and small prototypes.
 
@@ -29,6 +30,7 @@ Build an event-driven application workflow
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use Psr\EventDispatcher\EventDispatcherInterface;
    use Psr\EventDispatcher\ListenerProviderInterface;
+
    use function FastForward\Container\container;
 
    final readonly class UserRegistered
@@ -68,11 +70,12 @@ Register your application services next to the framework
 
    use App\ServiceProvider\AppServiceProvider;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
    $container = container(
-       new FrameworkServiceProvider(),
-       new AppServiceProvider(),
+       FrameworkServiceProvider::class,
+       AppServiceProvider::class,
    );
 
 The later provider can add new services or override existing ones when it uses the same
@@ -87,6 +90,7 @@ Drive container setup from configuration
    use FastForward\Config\ArrayConfig;
    use FastForward\Container\ContainerInterface;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
    $config = new ArrayConfig([

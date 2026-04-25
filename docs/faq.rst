@@ -49,9 +49,10 @@ Use the helper function from ``fast-forward/container``:
 .. code-block:: php
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
 How do I access the current request?
 ------------------------------------

@@ -34,6 +34,7 @@ The most practical way to add listeners is to provide them under the
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use Psr\EventDispatcher\EventDispatcherInterface;
    use Psr\EventDispatcher\ListenerProviderInterface;
+
    use function FastForward\Container\container;
 
    final readonly class UserRegistered
@@ -77,6 +78,7 @@ If your project uses Symfony subscribers or ``#[AsEventListener]`` attributes, a
    use Psr\EventDispatcher\ListenerProviderInterface;
    use Symfony\Component\EventDispatcher\EventSubscriberInterface;
    use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
+
    use function FastForward\Container\container;
 
    final readonly class PaymentReceived

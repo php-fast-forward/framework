@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add changelog history for releases v1.0.0-v1.3.0 during dev-tools asset synchronization. (#3)
 - Sync latest Fast Forward dev-tools managed assets (workflow templates, governance metadata, agents, and skills) into this repository. (#3)
+- Add repository AGENTS.md for agent task orchestration and local onboarding flow.
+
+### Changed
+
+- Prefer FrameworkServiceProvider::class in framework README/docs bootstrap snippets instead of instantiating provider objects.
 
 ## [1.3.0] - 2026-03-29
 

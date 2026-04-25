@@ -4,16 +4,33 @@
 Documentation
 =============
 
-**Fast Forward Framework** is the metapackage entry point for the Fast Forward ecosystem.
-It installs the core libraries you are most likely to need first and exposes a single
-``FrameworkServiceProvider`` that bootstraps the HTTP and event-dispatcher stacks inside a
-Fast Forward container.
+.. container:: row align-items-center gy-4 my-4
 
-This package is especially useful when you want one Composer dependency that gives you:
+   .. container:: col-lg-7
 
-- a PSR-11 friendly container workflow
-- the Fast Forward HTTP and event-dispatcher service-provider stacks
-- access to supporting packages such as configuration, deferred callbacks, iterators, and process tools
+      **Fast Forward Framework** is the metapackage entry point for the Fast Forward ecosystem.
+      It installs the core libraries you are most likely to need first and exposes a single
+      ``FrameworkServiceProvider`` that bootstraps the HTTP and event-dispatcher stacks inside a
+      Fast Forward container.
+
+      If you are new to the package, start with
+      :doc:`getting-started/installation` and :doc:`getting-started/quickstart`.
+
+      If you are maintaining a consumer application, read
+      :doc:`advanced/integration`, :doc:`usage/index`, and
+      :doc:`links/dependencies`.
+
+      This package is especially useful when you want one Composer dependency that gives you:
+
+      - a PSR-11 friendly container workflow
+      - the Fast Forward HTTP and event-dispatcher service-provider stacks
+      - access to supporting packages such as configuration, deferred callbacks, iterators, and process tools
+
+   .. container:: col-lg-5 text-center
+
+      .. image:: _static/mascot.png
+         :alt: Fast Forward Framework mascot
+         :class: img-fluid w-100 rounded-4 shadow-sm border border-light-subtle bg-body-tertiary p-2
 
 What this package does
 ----------------------
@@ -41,6 +58,7 @@ Useful Links
 - `Packagist <https://packagist.org/packages/fast-forward/framework>`_
 - `Issue Tracker <https://github.com/php-fast-forward/framework/issues>`_
 - `Coverage Report <https://php-fast-forward.github.io/framework/coverage/index.html>`_
+- `Metrics Report <https://php-fast-forward.github.io/framework/metrics/index.html>`_
 - `Testdox Report <https://php-fast-forward.github.io/framework/coverage/testdox.html>`_
 
 .. toctree::

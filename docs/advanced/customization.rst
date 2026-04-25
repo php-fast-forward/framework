@@ -13,11 +13,12 @@ Register your application provider after the framework provider:
 
    use App\ServiceProvider\AppServiceProvider;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
    $container = container(
-       new FrameworkServiceProvider(),
-       new AppServiceProvider(),
+       FrameworkServiceProvider::class,
+       AppServiceProvider::class,
    );
 
 This keeps the framework defaults while giving your application room to add domain-specific
@@ -86,6 +87,7 @@ You can extend the framework's event behavior without replacing the framework pr
    use FastForward\Container\ContainerInterface;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use Psr\EventDispatcher\ListenerProviderInterface;
+
    use function FastForward\Container\container;
 
    $config = new ArrayConfig([

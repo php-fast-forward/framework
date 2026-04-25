@@ -12,9 +12,10 @@ The recommended integration path is the ``container()`` helper from ``fast-forwa
 .. code-block:: php
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
 Integrate through configuration
 -------------------------------
@@ -29,6 +30,7 @@ container helper:
    use FastForward\Container\ContainerInterface;
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use Psr\EventDispatcher\ListenerProviderInterface;
+
    use function FastForward\Container\container;
 
    $config = new ArrayConfig([

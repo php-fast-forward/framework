@@ -6,6 +6,7 @@ This section centralizes external references, dependency docs, and quality repor
 - `GitHub Repository <https://github.com/php-fast-forward/framework>`_
 - `Packagist <https://packagist.org/packages/fast-forward/framework>`_
 - `Coverage Report <https://php-fast-forward.github.io/framework/coverage/index.html>`_
+- `Metrics Report <https://php-fast-forward.github.io/framework/metrics/index.html>`_
 - `Testdox Report <https://php-fast-forward.github.io/framework/coverage/testdox.html>`_
 - `API Reference (README) <https://github.com/php-fast-forward/framework#readme>`_
 

@@ -15,14 +15,15 @@ Minimal bootstrap
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
    use FastForward\Http\Message\Factory\ResponseFactoryInterface;
-   use function FastForward\Container\container;
    use Psr\EventDispatcher\EventDispatcherInterface;
    use Psr\Http\Client\ClientInterface;
    use Psr\Http\Message\ServerRequestInterface;
 
+   use function FastForward\Container\container;
+
    require_once __DIR__ . '/../vendor/autoload.php';
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
    $request = $container->get(ServerRequestInterface::class);
    $responseFactory = $container->get(ResponseFactoryInterface::class);
@@ -55,9 +56,10 @@ function:
 .. code-block:: php
 
    use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
    use function FastForward\Container\container;
 
-   $container = container(new FrameworkServiceProvider());
+   $container = container(FrameworkServiceProvider::class);
 
 This is the preferred documented bootstrap for this repository because the installed container
 package exposes the helper function and ``ContainerInterface``, not a ``Container`` class.

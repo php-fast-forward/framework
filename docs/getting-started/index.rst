@@ -14,3 +14,6 @@ If you are evaluating the package for the first time, read the pages in this ord
 
    installation
    quickstart
+
+Learn more in the main links section for dependency and report references before you
+start production wiring.
