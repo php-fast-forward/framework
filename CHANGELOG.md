@@ -7,13 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.0] - 2026-04-25
+
 ### Added
 
 - Add changelog history for releases v1.0.0-v1.3.0 during dev-tools asset synchronization. (#3)
 - Sync latest Fast Forward dev-tools managed assets (workflow templates, governance metadata, agents, and skills) into this repository. (#3)
 - Add repository AGENTS.md for agent task orchestration and local onboarding flow.
-- Add ``fast-forward/enum`` as an installed package in the framework metapackage and
-  document its presence in package surface guidance. (#6)
+- Add ``fast-forward/enum`` as an installed package in the framework metapackage and document its presence in package surface guidance. (#6)
 
 ### Changed
 
@@ -60,7 +61,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial package bootstrap, foundational framework scaffolding, and baseline release metadata.
 
 
-[unreleased]: https://github.com/php-fast-forward/framework/compare/v1.3.0...HEAD
+[unreleased]: https://github.com/php-fast-forward/framework/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/php-fast-forward/framework/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/php-fast-forward/framework/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/php-fast-forward/framework/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/php-fast-forward/framework/compare/v1.1.0...v1.2.0
