@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add changelog history for releases v1.0.0-v1.3.0 during dev-tools asset synchronization.
+- Add changelog history for releases v1.0.0-v1.3.0 during dev-tools asset synchronization. (#3)
 - Sync latest Fast Forward dev-tools managed assets (workflow templates, governance metadata, agents, and skills) into this repository. (#3)
 
 ## [1.3.0] - 2026-03-29
