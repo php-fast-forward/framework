@@ -3,6 +3,7 @@
     "description": "Fast Forward Framework — a lightweight PHP framework for building modern web applications with a simple and elegant API.",
     "license": "MIT",
     "type": "library",
+    "readme": "README.md",
     "authors": [
         {
             "name": "Felipe Sayão Lobato Abreu",
@@ -14,6 +15,16 @@
         "issues": "https://github.com/php-fast-forward/framework/issues",
         "source": "https://github.com/php-fast-forward/framework"
     },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/php-fast-forward"
+        },
+        {
+            "type": "custom",
+            "url": "https://www.paypal.com/donate/?business=JLDAF45XZ8D84"
+        }
+    ],
     "require": {
         "php": "^8.3",
         "fast-forward/clock": "^1.0",
@@ -45,6 +56,7 @@
             "fast-forward/dev-tools": true,
             "phpdocumentor/shim": true,
             "phpro/grumphp": true,
+            "phpro/grumphp-shim": true,
             "pyrech/composer-changelogs": true
         },
         "platform": {
