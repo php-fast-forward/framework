@@ -826,9 +826,10 @@ layer for the rest of your application.</p>
 .</p>
 
             <pre><code class="language-php">use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
-$container = container(new FrameworkServiceProvider());</code></pre>
+$container = container(FrameworkServiceProvider::class);</code></pre>
 
     </section>
 
@@ -844,6 +845,7 @@ use FastForward\Config\ArrayConfig;
 use FastForward\Container\ContainerInterface;
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use Psr\EventDispatcher\ListenerProviderInterface;
+
 use function FastForward\Container\container;
 
 $config = new ArrayConfig([

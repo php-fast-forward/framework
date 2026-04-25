@@ -827,14 +827,15 @@ declare(strict_types=1);
 
 use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
 use FastForward\Http\Message\Factory\ResponseFactoryInterface;
-use function FastForward\Container\container;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
+use function FastForward\Container\container;
+
 require_once __DIR__ . &#039;/../vendor/autoload.php&#039;;
 
-$container = container(new FrameworkServiceProvider());
+$container = container(FrameworkServiceProvider::class);
 
 $request = $container-&gt;get(ServerRequestInterface::class);
 $responseFactory = $container-&gt;get(ResponseFactoryInterface::class);
@@ -884,9 +885,10 @@ $response = $responseFactory-&gt;createResponseFromPayload([
 function:</p>
 
             <pre><code class="language-php">use FastForward\Framework\ServiceProvider\FrameworkServiceProvider;
+
 use function FastForward\Container\container;
 
-$container = container(new FrameworkServiceProvider());</code></pre>
+$container = container(FrameworkServiceProvider::class);</code></pre>
 
             
     <p>This is the preferred documented bootstrap for this repository because the installed container
