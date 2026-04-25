@@ -4,6 +4,11 @@
 Documentation
 =============
 
+.. image:: _static/mascot.png
+   :alt: Fast Forward Framework mascot
+   :align: center
+   :width: 220px
+
 **Fast Forward Framework** is the metapackage entry point for the Fast Forward ecosystem.
 It installs the core libraries you are most likely to need first and exposes a single
 ``FrameworkServiceProvider`` that bootstraps the HTTP and event-dispatcher stacks inside a
@@ -41,6 +46,7 @@ Useful Links
 - `Packagist <https://packagist.org/packages/fast-forward/framework>`_
 - `Issue Tracker <https://github.com/php-fast-forward/framework/issues>`_
 - `Coverage Report <https://php-fast-forward.github.io/framework/coverage/index.html>`_
+- `Metrics Report <https://php-fast-forward.github.io/framework/metrics/index.html>`_
 - `Testdox Report <https://php-fast-forward.github.io/framework/coverage/testdox.html>`_
 
 .. toctree::
