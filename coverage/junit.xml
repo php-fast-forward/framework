@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="CLI Arguments" tests="2" assertions="78" errors="0" failures="0" skipped="0" time="0.008081">
-    <testsuite name="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" tests="2" assertions="78" errors="0" failures="0" skipped="0" time="0.008081">
-      <testcase name="getFactoriesWillReturnAggregatedServiceProviderFactories" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" line="47" class="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" classname="FastForward.Framework.Tests.ServiceProvider.FrameworkServiceProviderTest" assertions="69" time="0.006518"/>
-      <testcase name="getExtensionsWillReturnAggregatedServiceProviderExtensions" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" line="78" class="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" classname="FastForward.Framework.Tests.ServiceProvider.FrameworkServiceProviderTest" assertions="9" time="0.001563"/>
+  <testsuite name="CLI Arguments" tests="2" assertions="78" errors="0" failures="0" skipped="0" time="0.008118">
+    <testsuite name="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" tests="2" assertions="78" errors="0" failures="0" skipped="0" time="0.008118">
+      <testcase name="getFactoriesWillReturnAggregatedServiceProviderFactories" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" line="47" class="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" classname="FastForward.Framework.Tests.ServiceProvider.FrameworkServiceProviderTest" assertions="69" time="0.006562"/>
+      <testcase name="getExtensionsWillReturnAggregatedServiceProviderExtensions" file="/home/runner/work/framework/framework/tests/ServiceProvider/FrameworkServiceProviderTest.php" line="78" class="FastForward\Framework\Tests\ServiceProvider\FrameworkServiceProviderTest" classname="FastForward.Framework.Tests.ServiceProvider.FrameworkServiceProviderTest" assertions="9" time="0.001557"/>
     </testsuite>
   </testsuite>
 </testsuites>
