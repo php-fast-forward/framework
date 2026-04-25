@@ -813,11 +813,9 @@
                                             <section class="section " id="documentation">
             <h1>Documentation</h1>
 
-            <img
-    src="./docs/_static/mascot.png"
-    width="220px"        align="center"    alt="Fast Forward Framework mascot"        />
-
-            
+            <div class="row align-items-center gy-4 my-4">
+    <div class="col-lg-7">
+    
     <p><strong>Fast Forward Framework</strong>
  is the metapackage entry point for the Fast Forward ecosystem.
 It installs the core libraries you are most likely to need first and exposes a single
@@ -825,10 +823,15 @@ It installs the core libraries you are most likely to need first and exposes a s
  that bootstraps the HTTP and event-dispatcher stacks inside a
 Fast Forward container.</p>
 
-            
+    <p>If you are new to the package, start with
+<a href="./getting-started/installation.html">Installation</a> and <a href="./getting-started/quickstart.html">Quickstart</a>.</p>
+
+    <p>If you are maintaining a consumer application, read
+<a href="./advanced/integration.html">Integration</a>, <a href="./usage/index.html">Usage</a>, and
+<a href="./links/dependencies.html">Dependencies Documentation</a>.</p>
+
     <p>This package is especially useful when you want one Composer dependency that gives you:</p>
 
-            
 
 <ul>
     <li class="dash">a PSR-11 friendly container workflow</li>
@@ -838,6 +841,16 @@ Fast Forward container.</p>
     <li class="dash">access to supporting packages such as configuration, deferred callbacks, iterators, and process tools</li>
 
 </ul>
+
+</div>
+<div class="col-lg-5 text-center">
+    <img
+    src="./docs/_static/mascot.png"
+                alt="Fast Forward Framework mascot"        class="img-fluid w-100 rounded-4 shadow-sm border border-light-subtle bg-body-tertiary p-2"/>
+
+</div>
+
+</div>
 
             <section class="section " id="what-this-package-does">
             <h2>What this package does</h2>
