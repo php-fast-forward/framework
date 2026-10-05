@@ -28,8 +28,8 @@ Documentation
 
    .. container:: col-lg-5 text-center
 
-      .. image:: _static/mascot.png
-         :alt: Fast Forward Framework mascot
+      .. image:: _static/mascot-banner.png
+         :alt: Dash connecting the framework modules
          :class: img-fluid w-100 rounded-4 shadow-sm border border-light-subtle bg-body-tertiary p-2
 
 What this package does
