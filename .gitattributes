@@ -15,3 +15,4 @@
 /infection.json5   export-ignore
 /phpunit.xml       export-ignore
 /README.md         export-ignore
+/assets/brand/ export-ignore
