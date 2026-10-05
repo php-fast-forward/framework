@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Replace the mascot banner with contextual Dash artwork connecting framework modules, align README and documentation references, and record the artwork source.
+- Replace the mascot banner with contextual Dash artwork connecting framework modules and align README and documentation references. (#9)
 
 ## [1.4.0] - 2026-04-25
 

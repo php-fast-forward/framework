@@ -1,7 +1,6 @@
 *                  text=auto
 /.dev-tools/       export-ignore
 /.github/          export-ignore
-/docs/             export-ignore
 /tests/            export-ignore
 /.docheader        export-ignore
 /.dockerignore     export-ignore
@@ -15,6 +14,3 @@
 /infection.json5   export-ignore
 /phpunit.xml       export-ignore
 /README.md         export-ignore
-/assets/brand/ export-ignore
-/docs/_static/mascot-banner.png export-ignore
-/docs/_static/mascot-banner.receipt.json export-ignore

@@ -1,7 +1,7 @@
 # Fast Forward Framework
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/php-fast-forward/framework/40a5330e1fb4170b6d22b89e3f24a185fd81c32f/docs/_static/mascot-banner.png" alt="Dash connecting services, events, clocks and HTTP modules" width="840">
+  <img src="docs/_static/mascot-banner.png" alt="Dash connecting services, events, clocks and HTTP modules" width="840">
 </p>
 
 [![PHP Version](https://img.shields.io/badge/php-^8.3-777BB4?logo=php&logoColor=white)](https://www.php.net/releases/)
