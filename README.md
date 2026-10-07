@@ -1,6 +1,8 @@
 # Fast Forward Framework
 
-![Fast Forward mascot](docs/_static/mascot.png)
+<p align="center">
+  <img src="docs/_static/mascot-banner.png" alt="Dash connecting services, events, clocks and HTTP modules" width="840">
+</p>
 
 [![PHP Version](https://img.shields.io/badge/php-^8.3-777BB4?logo=php&logoColor=white)](https://www.php.net/releases/)
 [![Composer Package](https://img.shields.io/badge/composer-fast--forward%2Fframework-F28D1A.svg?logo=composer&logoColor=white)](https://packagist.org/packages/fast-forward/framework)
