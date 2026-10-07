@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Replace the mascot banner with contextual Dash artwork connecting framework modules and align README and documentation references. (#9)
 
+### Fixed
+
+- Allow the isolated CI status publisher to read workflow job outcomes without granting write permissions to test jobs.
+
 ## [1.4.0] - 2026-04-25
 
 ### Added
