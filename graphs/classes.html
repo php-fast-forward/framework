@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="utf-8">
+    <script>
+        (function () {
+            var theme = 'light';
+            try {
+                if (window.localStorage.getItem('fast-forward-documentation-theme') === 'dark') theme = 'dark';
+            } catch (error) { /* Storage is optional. */ }
+            document.documentElement.setAttribute('data-bs-theme', theme);
+        })();
+    </script>
             <title>fast-forward/framework</title>
     
         
     
-        
+            
                                                     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
 
     </head>
-<body>
+<body class="ff-docs">
+    <a class="ff-skip-link" href="graphs/classes.html#content">Skip to documentation</a>
     <div id="main-wrapper">
-        <header id="header" class="sticky-top">
-    <nav class="navbar bg-primary navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand text-bg-primary" href="" title="fast-forward/framework">fast-forward/framework</a>
-
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <header id="header" class="sticky-top" data-bs-theme="dark">
+    <nav class="navbar ff-docs-header navbar-expand-lg" aria-label="Documentation toolbar">
+        <div class="container-fluid gap-3">
+            <a class="navbar-brand ff-docs-brand" href="" title="fast-forward/framework">
+                <img src="images/fast-forward-logo-dark.svg" alt="PHP Fast Forward" width="200" height="80">
+                <span class="ff-docs-project">fast-forward/framework</span>
+            </a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle toolbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div id="header-nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <nav aria-label="Top navigation">
+            <div id="header-nav" class="collapse navbar-collapse gap-3">
+                <div class="me-auto"><nav aria-label="Top navigation">
     <ul class="navbar-nav flex-row flex-wrap align-items-center gap-2">
             </ul>
-</nav>                </ul>
-
-                <div class="navbar-nav ms-lg-3">
-                    <li class="nav-item ml-lg-auto">
+</nav></div>
+                <div class="nav-item">
     <section data-search-form class="phpdocumentor-search">
         <div class="input-group">
             <span class="input-group-text bg-body border-end-0">
@@ -41,7 +49,8 @@
             <input
                 type="search"
                 class="form-control border-start-0"
-                placeholder="Search..."
+                placeholder="Search documentation..."
+                aria-label="Search documentation"
                 autocomplete="off"
             >
 
@@ -55,15 +64,21 @@
             </button>
         </div>
     </section>
-</li>
-                </div>
+</div>
+                <button class="ff-docs-theme" type="button" data-reading-theme-toggle aria-label="Switch to navy theme" title="Switch to navy theme" hidden>
+                    <svg class="ff-theme-moon" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 0 1 11.21 3 9 9 0 1 0 21 12.79Z" /></svg>
+                    <svg class="ff-theme-sun" aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+                </button>
             </div>
         </div>
     </nav>
 </header>
-        <div id="content" role="main" class="container-fluid">
+
+        <main id="content" tabindex="-1" class="container-fluid">
             <div class="row min-vh-100">
-                <aside class="col-12 col-lg-3 col-xl-2 px-0 position-sticky top-0 vh-100 overflow-auto">
+                <aside class="ff-docs-rail col-12 col-lg-3 col-xl-2 px-0" data-bs-theme="dark">
+                    <details class="ff-docs-navigation" open>
+                        <summary>Documentation navigation</summary>
                     <div class="navigation h-100">
                         <nav class="py-4">
     <ul class="list-unstyled mb-0">
@@ -88,7 +103,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./getting-started/index.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             Getting Started
         </a>
@@ -100,6 +115,7 @@
                 data-bs-target="#sidebar-getting-started-index-html"
                 aria-expanded="false"
                 aria-controls="sidebar-getting-started-index-html"
+                aria-label="Toggle Getting Started sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -121,7 +137,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./getting-started/installation.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Installation
         </a>
@@ -129,6 +145,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -143,7 +160,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./getting-started/quickstart.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Quickstart
         </a>
@@ -151,10 +168,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -169,7 +188,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./usage/index.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             Usage
         </a>
@@ -181,6 +200,7 @@
                 data-bs-target="#sidebar-usage-index-html"
                 aria-expanded="false"
                 aria-controls="sidebar-usage-index-html"
+                aria-label="Toggle Usage sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -202,7 +222,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./usage/getting-services.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Getting Services
         </a>
@@ -210,6 +230,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -224,7 +245,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./usage/http-services.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             HTTP Services
         </a>
@@ -232,6 +253,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -246,7 +268,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./usage/event-dispatching.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Event Dispatching
         </a>
@@ -254,6 +276,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -268,7 +291,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./usage/use-cases.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Use Cases
         </a>
@@ -276,10 +299,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -294,7 +319,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./advanced/index.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             Advanced
         </a>
@@ -306,6 +331,7 @@
                 data-bs-target="#sidebar-advanced-index-html"
                 aria-expanded="false"
                 aria-controls="sidebar-advanced-index-html"
+                aria-label="Toggle Advanced sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -327,7 +353,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./advanced/integration.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Integration
         </a>
@@ -335,6 +361,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -349,7 +376,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./advanced/customization.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Customization
         </a>
@@ -357,10 +384,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -375,7 +404,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./api/index.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             API Reference
         </a>
@@ -387,6 +416,7 @@
                 data-bs-target="#sidebar-api-index-html"
                 aria-expanded="false"
                 aria-controls="sidebar-api-index-html"
+                aria-label="Toggle API Reference sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -408,7 +438,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./api/service-provider.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             FrameworkServiceProvider
         </a>
@@ -416,6 +446,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -430,7 +461,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./api/service-map.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Service Map
         </a>
@@ -438,10 +469,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -456,7 +489,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./links/index.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             Links
         </a>
@@ -468,6 +501,7 @@
                 data-bs-target="#sidebar-links-index-html"
                 aria-expanded="false"
                 aria-controls="sidebar-links-index-html"
+                aria-label="Toggle Links sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -489,7 +523,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./links/dependencies.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Dependencies Documentation
         </a>
@@ -497,6 +531,7 @@
             </div>
 
     </li>
+
                             <li class="nav-item">
     
     
@@ -511,7 +546,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./links/coverage.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Coverage and Reports
         </a>
@@ -519,10 +554,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -537,7 +574,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./faq.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             FAQ
         </a>
@@ -545,6 +582,7 @@
             </div>
 
     </li>
+
                                                     <li class="nav-item">
     
     
@@ -559,7 +597,7 @@
     <div class="d-flex align-items-center">
         <a
             href="./compatibility.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             Compatibility
         </a>
@@ -567,6 +605,7 @@
             </div>
 
     </li>
+
                                             </ul>
                 </li>
                             <li class="mb-4">
@@ -590,7 +629,7 @@
     <div class="d-flex align-items-center">
         <a
             href="namespaces/fastforward.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             FastForward
         </a>
@@ -602,6 +641,7 @@
                 data-bs-target="#sidebar-namespaces-fastforward-html"
                 aria-expanded="false"
                 aria-controls="sidebar-namespaces-fastforward-html"
+                aria-label="Toggle FastForward sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -623,7 +663,7 @@
     <div class="d-flex align-items-center">
         <a
             href="namespaces/fastforward-framework.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Framework
         </a>
@@ -635,6 +675,7 @@
                 data-bs-target="#sidebar-namespaces-fastforward-framework-html"
                 aria-expanded="false"
                 aria-controls="sidebar-namespaces-fastforward-framework-html"
+                aria-label="Toggle Framework sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -656,7 +697,7 @@
     <div class="d-flex align-items-center">
         <a
             href="namespaces/fastforward-framework-serviceprovider.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             ServiceProvider
         </a>
@@ -664,14 +705,17 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                             </ul>
                 </li>
                             <li class="mb-4">
@@ -695,7 +739,7 @@
     <div class="d-flex align-items-center">
         <a
             href="packages/FastForward.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis"
         >
             FastForward
         </a>
@@ -707,6 +751,7 @@
                 data-bs-target="#sidebar-packages-FastForward-html"
                 aria-expanded="false"
                 aria-controls="sidebar-packages-FastForward-html"
+                aria-label="Toggle FastForward sections"
             >
                 <i class="fas fa-chevron-down small"></i>
             </button>
@@ -728,7 +773,7 @@
     <div class="d-flex align-items-center">
         <a
             href="packages/FastForward-Framework.html"
-            class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
+                        class="nav-link flex-grow-1 px-3 py-1 rounded-2 link-body-emphasis small"
         >
             Framework
         </a>
@@ -736,10 +781,12 @@
             </div>
 
     </li>
+
                         
             </ul>
         </div>
     </li>
+
                                             </ul>
                 </li>
                     
@@ -789,6 +836,7 @@
     </ul>
 </nav>
                     </div>
+                    </details>
                 </aside>
 
                 <div class="col-12 col-lg-9 col-xl-10">
@@ -797,7 +845,7 @@
                             
                             <div class="row g-4">
                                 <div class="col-12">
-                                    <div class="bg-body rounded-4 border p-4 p-xl-5 shadow-sm">
+                                    <div class="ff-docs-article bg-body p-4 p-xl-5">
                                             <section class="py-4">
         <div class="d-flex align-items-center gap-2 mb-4">
             <i class="fas fa-project-diagram text-primary"></i>
@@ -885,7 +933,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <div
     data-search-results
@@ -920,7 +968,7 @@
     </div>
 </div>    </div>
 
-    <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a>
+    <a id="back-to-top" title="Back to Top" href="graphs/classes.html#content" aria-label="Back to documentation"><i class="fa fa-chevron-up"></i></a>
 
         <script src="https://unpkg.com/panzoom@8.7.3/dist/panzoom.min.js"></script>
 </body>
