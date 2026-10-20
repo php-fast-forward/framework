@@ -21,8 +21,9 @@ Fast Forward components through a single provider entry point.
   - `composer dev-tools`
 - Apply auto-fixes and generated file synchronization with:
   - `composer dev-tools:fix`
-- Validate changelog discipline on PR branches with:
-  - `composer dev-tools changelog:check -- --against=refs/remotes/origin/main`
+- Read `.agents/skills/fast-forward-changelog/SKILL.md` before changelog work.
+- Validate committed PR contributions with PHP 8.5+ and:
+  - `cpx --skip-local fast-forward/changelog:0.3.0 check --since=origin/main --no-interaction`
 
 ## Testing and quality gates
 
@@ -40,5 +41,6 @@ Fast Forward components through a single provider entry point.
 
 ## PR and review expectations
 
-- When making user-visible changes, add an entry under `## [Unreleased]` in [`CHANGELOG.md`](CHANGELOG.md).
+- When making user-visible changes, add a unique `.changelog/*.md` fragment using the installed Changelog skill and [contribution guide](CONTRIBUTING.md).
+- Preserve published `CHANGELOG.md` history. The reviewed version PR consolidates pending fragments; do not add an `Unreleased` heading.
 - Prefer concise entry wording and include the current PR reference when known.

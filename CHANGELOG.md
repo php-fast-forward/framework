@@ -5,19 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-### Changed
-
-- Publish generated Wiki pages directly without tracking the Wiki as a Git submodule.
-
-- Replace the mascot banner with contextual Dash artwork connecting framework modules and align README and documentation references. (#9)
-
-### Fixed
-
-- Pin Wiki publication to the merged DevTools workflow so a squash merge cannot invalidate its source revision. (#12)
-- Allow the isolated CI status publisher to read workflow job outcomes without granting write permissions to test jobs.
-
 ## [1.4.0] - 2026-04-25
 
 ### Added
@@ -72,7 +59,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial package bootstrap, foundational framework scaffolding, and baseline release metadata.
 
 
-[unreleased]: https://github.com/php-fast-forward/framework/compare/v1.4.0...HEAD
 [1.4.0]: https://github.com/php-fast-forward/framework/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/php-fast-forward/framework/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/php-fast-forward/framework/compare/v1.2.0...v1.2.1
