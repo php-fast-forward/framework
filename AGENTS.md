@@ -23,7 +23,7 @@ Fast Forward components through a single provider entry point.
   - `composer dev-tools:fix`
 - Read `.agents/skills/fast-forward-changelog/SKILL.md` before changelog work.
 - Validate committed PR contributions with PHP 8.5+ and:
-  - `cpx --skip-local fast-forward/changelog:0.3.0 check --since=origin/main --no-interaction`
+  - `cpx --skip-local fast-forward/changelog check --since=origin/main --no-interaction`
 
 ## Testing and quality gates
 
