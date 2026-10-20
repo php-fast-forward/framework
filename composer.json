@@ -27,18 +27,21 @@
     ],
     "require": {
         "php": "^8.3",
-        "fast-forward/clock": "^1.0",
-        "fast-forward/config": "^1.4",
-        "fast-forward/container": "^1.5",
-        "fast-forward/defer": "^1.0",
-        "fast-forward/enum": "^0.1",
+        "fast-forward/clock": "^1.1",
+        "fast-forward/config": "^1.7.3",
+        "fast-forward/container": "^1.10.1",
+        "fast-forward/defer": "^1.0.1",
+        "fast-forward/enum": "^0.1.1",
         "fast-forward/event-dispatcher": "^1.0",
-        "fast-forward/fork": "^1.0",
-        "fast-forward/http": "^1.0",
-        "fast-forward/iterators": "^1.0"
+        "fast-forward/fork": "^1.0.1",
+        "fast-forward/http": "^1.1",
+        "fast-forward/iterators": "^1.2"
     },
     "require-dev": {
-        "fast-forward/dev-tools": "dev-main"
+        "fast-forward/dev-tools": "^1.26"
+    },
+    "suggest": {
+        "llm/skills": "Optionally synchronize the bundled consumer skill in your project."
     },
     "minimum-stability": "stable",
     "autoload": {
@@ -71,6 +74,9 @@
         },
         "grumphp": {
             "config-default-path": "vendor/fast-forward/dev-tools/grumphp.yml"
+        },
+        "skills": {
+            "source": "resources/skills"
         }
     },
     "scripts": {

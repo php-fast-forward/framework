@@ -99,3 +99,15 @@ Fast Forward Framework is licensed under the [MIT license](LICENSE).
 
 Developed by **Felipe Sayão Lobato Abreu**
 - 📧 [github@mentordosnerds.com](mailto:github@mentordosnerds.com)
+
+## Consumer agent skill
+
+The package includes [fast-forward-framework](resources/skills/fast-forward-framework/SKILL.md) for application integration.
+It supports `fast-forward/framework:^1.5`; inspect the installed version.
+See [skill installation and lifecycle](resources/skills/fast-forward-framework/references/installation.md) for
+optional project synchronization with `llm/skills ^1.15`, guarded manual
+project/global copies and a pinned Skills CLI alternative. Shipping files does
+not install tooling or activate the skill in an agent session.
+
+See [dependency freshness](DEPENDENCIES.md) for compatible version ranges,
+application lockfiles and the daily Dependabot update policy.

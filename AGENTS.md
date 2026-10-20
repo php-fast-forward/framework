@@ -44,3 +44,11 @@ Fast Forward components through a single provider entry point.
 - When making user-visible changes, add a unique `.changelog/*.md` fragment using the installed Changelog skill and [contribution guide](CONTRIBUTING.md).
 - Preserve published `CHANGELOG.md` history. The reviewed version PR consolidates pending fragments; do not add an `Unreleased` heading.
 - Prefer concise entry wording and include the current PR reference when known.
+
+## Bundled consumer skill
+
+Read [the consumer skill](resources/skills/fast-forward-framework/SKILL.md) when changing application integration
+examples, consumer guides or the skill. Keep its version contract, references
+and executable examples aligned with the supported public API. The canonical
+distributable source is `resources/skills`; it needs no installed copy or host
+alias. Repository maintenance continues to follow this AGENTS.md.
