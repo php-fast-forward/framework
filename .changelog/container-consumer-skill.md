@@ -3,4 +3,4 @@ category: added
 type: patch
 ---
 
-Restores the Fast Forward Container consumer skill through the existing development-only Composer skill manager, alongside the configured contributor skills, without changing runtime dependencies.
+Restore the Fast Forward Container consumer skill from its installed Composer package through the existing development-only skill manager, alongside the configured contributor skills.
