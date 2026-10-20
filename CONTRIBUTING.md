@@ -23,3 +23,13 @@ from the reviewed GitHub source in `skills.json`; generated files are ignored by
 Git. Use `composer skills:show` to inspect it and
 `composer skills:update --from=github` for an explicit refresh within the
 configured version range. Review `skills.json` before changing that range.
+
+## Container consumer skill
+
+The same development-only manager also restores `fast-forward-container` from
+`php-fast-forward/container` within `^1.10.0`, alongside the other configured
+skills. Inspect all sources with `composer skills:show` and refresh them with
+`composer skills:update --from=github`. Generated copies stay ignored; this
+configuration does not upgrade the runtime library. Check the installed
+Container version before following the skill: its API contract supports `^1.10`
+and requires reporting earlier versions instead of assuming compatibility.
