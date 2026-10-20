@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2026-10-20 16:19:26        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2026-10-20 16:45:52        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -305,6 +305,34 @@
     },
     {
         "name": "\\FastForward\\Container\\Factory\\ServiceFactory",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Config\\SkillExamples\\Fixtures\\InvalidCacheKeyException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\InvalidArgumentException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Psr\\SimpleCache\\InvalidArgumentException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Config\\SkillExamples\\Fixtures\\MemoryCache",
+        "size": 3000,
+        "relations": [
+            "\\Psr\\SimpleCache\\CacheInterface",
+            "\\FastForward\\Config\\SkillExamples\\Fixtures\\InvalidCacheKeyException"
+        ]
+    },
+    {
+        "name": "\\Psr\\SimpleCache\\CacheInterface",
         "size": 3000,
         "relations": []
     },
