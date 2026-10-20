@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] - 2026-10-20
+
+### Changed
+
+- Adopt Fast Forward Changelog automation through its v0 release channel and its project skill for validated contribution notes and reviewed version pull requests titled with the package name and current/next versions. Remove the legacy automatic conflict-resolution workflow now that pending changes use independent fragments. ([#13](https://github.com/php-fast-forward/framework/pull/13))
+- Replace the mascot banner with contextual Dash artwork connecting framework modules and align README and documentation references. ([#9](https://github.com/php-fast-forward/framework/pull/9))
+- Publish generated Wiki pages directly without tracking the Wiki as a Git submodule. ([#13](https://github.com/php-fast-forward/framework/pull/13))
+
+### Fixed
+
+- Allow the isolated CI status publisher to read workflow job outcomes without granting write permissions to test jobs. ([#13](https://github.com/php-fast-forward/framework/pull/13))
+- Pin Wiki publication to the merged DevTools workflow so a squash merge cannot invalidate its source revision. ([#12](https://github.com/php-fast-forward/framework/pull/12))
+
 ## [1.4.0] - 2026-04-25
 
 ### Added
@@ -59,6 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial package bootstrap, foundational framework scaffolding, and baseline release metadata.
 
 
+[1.4.1]: https://github.com/php-fast-forward/framework/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/php-fast-forward/framework/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/php-fast-forward/framework/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/php-fast-forward/framework/compare/v1.2.0...v1.2.1
