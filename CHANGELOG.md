@@ -13,6 +13,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- GitHub Actions(deps): Bump php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml from c637e7f9d8ae6059b8655996e56f6d17f874792c to 35d27ee20066fd9e234d228bb866102c64c7ef1a
+
+  Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
+
+  ([#18](https://github.com/php-fast-forward/framework/pull/18), @dependabot[bot])
 - Raise compatible Fast Forward dependency minimums to current stable releases, use stable DevTools and check Composer and Actions updates daily through Dependabot. ([#16](https://github.com/php-fast-forward/framework/pull/16))
 
 ## [1.4.1] - 2026-10-20
