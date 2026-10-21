@@ -8,8 +8,19 @@
     "dependencies": {
         "composer": {
             "trusted": [
+                "fast-forward/clock",
                 "fast-forward/config",
-                "fast-forward/container"
+                "fast-forward/container",
+                "fast-forward/defer",
+                "fast-forward/enum",
+                "fast-forward/event-dispatcher",
+                "fast-forward/fork",
+                "fast-forward/http",
+                "fast-forward/http-client",
+                "fast-forward/http-factory",
+                "fast-forward/http-message",
+                "fast-forward/iterators",
+                "fast-forward/phpdoc-bootstrap-template"
             ],
             "trusted-replace": true
         }

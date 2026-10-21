@@ -26,11 +26,32 @@ configured version range. Review `skills.json` before changing that range.
 
 ## Composer dependency skills
 
-The development-only manager restores `fast-forward-container` and
-`fast-forward-config` from the installed Composer packages, including Config as
-a transitive dependency. `skills.json` explicitly trusts only those two Composer
-donors; dependency trust does not extend to other installed packages. No separate
-GitHub source or version pin is used for either library.
+The development-only manager restores the consumer skills from these explicitly
+trusted Composer donors. Their minimum versions include the bundled payload;
+trust does not extend to other installed packages. No separate GitHub source
+is used for these libraries.
+
+| Composer donor | Minimum version | Dependency scope |
+| --- | --- | --- |
+| fast-forward/clock | 1.1.0 | Runtime |
+| fast-forward/config | 1.7.3 | Runtime |
+| fast-forward/container | 1.10.1 | Runtime |
+| fast-forward/defer | 1.1.0 | Runtime |
+| fast-forward/enum | 0.2.0 | Runtime |
+| fast-forward/event-dispatcher | 1.1.0 | Runtime |
+| fast-forward/fork | 1.1.0 | Runtime |
+| fast-forward/http | 1.2.0 | Runtime |
+| fast-forward/http-client | 1.2.0 | Transitive runtime |
+| fast-forward/http-factory | 1.3.0 | Transitive runtime |
+| fast-forward/http-message | 1.5.0 | Transitive runtime |
+| fast-forward/iterators | 1.3.0 | Runtime |
+| fast-forward/phpdoc-bootstrap-template | 2.2.0 | Development |
+
+The HTTP components remain transitive dependencies; Composer conflicts exclude
+older versions without adding duplicate runtime requirements. The template has
+an explicit development requirement. Composer Installers is not part of the
+installed graph, and the framework's own skill remains in its canonical
+`resources/skills` source rather than being a trusted dependency of itself.
 
 Inspect donors with `composer skills:show` and refresh their payloads with
 `composer skills:update --from=composer`. The existing GitHub source continues

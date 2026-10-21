@@ -30,16 +30,22 @@
         "fast-forward/clock": "^1.1",
         "fast-forward/config": "^1.7.3",
         "fast-forward/container": "^1.10.1",
-        "fast-forward/defer": "^1.0.1",
-        "fast-forward/enum": "^0.1.1",
-        "fast-forward/event-dispatcher": "^1.0",
-        "fast-forward/fork": "^1.0.1",
-        "fast-forward/http": "^1.1",
-        "fast-forward/iterators": "^1.2"
+        "fast-forward/defer": "^1.1",
+        "fast-forward/enum": "^0.2",
+        "fast-forward/event-dispatcher": "^1.1",
+        "fast-forward/fork": "^1.1",
+        "fast-forward/http": "^1.2",
+        "fast-forward/iterators": "^1.3"
     },
     "require-dev": {
         "fast-forward/dev-tools": "^1.26",
+        "fast-forward/phpdoc-bootstrap-template": "^2.2",
         "llm/skills": "^1.15"
+    },
+    "conflict": {
+        "fast-forward/http-client": "<1.2.0",
+        "fast-forward/http-factory": "<1.3.0",
+        "fast-forward/http-message": "<1.5.0"
     },
     "suggest": {
         "llm/skills": "Optionally synchronize the bundled consumer skill in your project."
@@ -59,11 +65,11 @@
         "allow-plugins": {
             "ergebnis/composer-normalize": true,
             "fast-forward/dev-tools": true,
+            "llm/skills": true,
             "phpdocumentor/shim": true,
             "phpro/grumphp": true,
             "phpro/grumphp-shim": true,
-            "pyrech/composer-changelogs": true,
-            "llm/skills": true
+            "pyrech/composer-changelogs": true
         },
         "platform": {
             "php": "8.3.0"

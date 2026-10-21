@@ -21,7 +21,12 @@ PRs; checks and maintainer merge decisions still apply.
 
 HTTP Client, HTTP Factory and HTTP Message are already installed transitively
 through fast-forward/http. Requiring them again at framework level is unnecessary
-for the framework's own provider. Clock, Config, Container, Defer, Enum, Event
+for the framework's own provider. Composer conflicts exclude HTTP Client before
+1.2.0, HTTP Factory before 1.3.0 and HTTP Message before 1.5.0 so every installed
+trusted donor includes its published consumer skill. The documentation template
+is required explicitly at ^2.2 for the development skill. The full donor/minimum
+table is in [the contribution guide](CONTRIBUTING.md#composer-dependency-skills).
+Clock, Config, Container, Defer, Enum, Event
 Dispatcher, Fork, HTTP and Iterators form the intended runtime aggregate.
 Changelog, DevTools, Composer Installers and the phpDocumentor template are
 development/distribution tools rather than extra application runtime services.
