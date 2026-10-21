@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2026-10-20 15:37:45        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2026-10-21 01:03:22        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -262,6 +262,24 @@
 
     var relations = [
     {
+        "name": "FastForward\\Framework\\Tests",
+        "size": 3000,
+        "relations": [
+            "PHPUnit\\Framework",
+            "Symfony\\Component\\Process"
+        ]
+    },
+    {
+        "name": "PHPUnit\\Framework",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Symfony\\Component\\Process",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "FastForward\\Framework\\Tests\\ServiceProvider",
         "size": 3000,
         "relations": [
@@ -272,11 +290,6 @@
             "FastForward\\Clock\\ServiceProvider",
             "FastForward\\Container\\Factory"
         ]
-    },
-    {
-        "name": "PHPUnit\\Framework",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "FastForward\\Framework\\ServiceProvider",
