@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.1] - 2026-10-24
+
+### Changed
+
+- GitHub Actions(deps): Bump php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml from 35d27ee20066fd9e234d228bb866102c64c7ef1a to 2d98b607bf832a82035ddcae3d689aef72842111
+
+  Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
+
+  ([#19](https://github.com/php-fast-forward/framework/pull/19), @dependabot[bot])
+
 ## [1.5.0] - 2026-10-21
 
 ### Added
@@ -92,6 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial package bootstrap, foundational framework scaffolding, and baseline release metadata.
 
 
+[1.5.1]: https://github.com/php-fast-forward/framework/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/php-fast-forward/framework/compare/v1.4.1...v1.5.0
 [1.4.1]: https://github.com/php-fast-forward/framework/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/php-fast-forward/framework/compare/v1.3.0...v1.4.0
