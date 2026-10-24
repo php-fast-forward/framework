@@ -25,7 +25,7 @@ require __DIR__ . '/vendor/autoload.php';
 $header = trim((string) preg_replace(
     ['!^/\*\*\n!', '! \*/!', '! \* ?!', '!%year%!', '!' . date('Y-Y') . '!'],
     ['', '', '', date('Y'), date('Y')],
-    (string) file_get_contents(__DIR__ . '/.docheader'),
+    str_replace("\r\n", "\n", (string) file_get_contents(__DIR__ . '/.docheader')),
 ));
 
 return (new Config())
