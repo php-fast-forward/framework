@@ -1,16 +1,16 @@
 FrameworkServiceProvider
 ========================
 
-.. php:class:: FastForward\Framework\ServiceProvider\FrameworkServiceProvider
+``FastForward\Framework\ServiceProvider\FrameworkServiceProvider``
 
-   Aggregates the default Fast Forward framework providers into a single container entry point.
-   In the current package, it composes the HTTP stack, the event-dispatcher stack, and the clock utilities
-   by delegating to ``FastForward\Http\ServiceProvider\HttpServiceProvider``,
-   ``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``, and
-   ``FastForward\Clock\ServiceProvider\ClockServiceProvider``.
+Aggregates the default Fast Forward framework providers into a single container entry point.
+In the current package, it composes the HTTP stack, the event-dispatcher stack, and the clock utilities
+by delegating to ``FastForward\Http\ServiceProvider\HttpServiceProvider``,
+``FastForward\EventDispatcher\ServiceProvider\EventDispatcherServiceProvider``, and
+``FastForward\Clock\ServiceProvider\ClockServiceProvider``.
 
-   The class extends ``FastForward\Container\ServiceProvider\AggregateServiceProvider``,
-   so it inherits the provider-merging behavior used across the ecosystem.
+The class extends ``FastForward\Container\ServiceProvider\AggregateServiceProvider``,
+so it inherits the provider-merging behavior used across the ecosystem.
 
 Usage
 -----
@@ -44,10 +44,10 @@ Important behavior inherited from ``AggregateServiceProvider``
 Constructor
 -----------
 
-.. php:method:: __construct()
+``__construct()``
 
-   Initializes the provider by passing the framework's default provider list to the parent
-   aggregate provider.
+Initializes the provider by passing the framework's default provider list to the parent
+aggregate provider.
 
 Current scope
 -------------
