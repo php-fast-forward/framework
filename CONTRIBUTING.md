@@ -22,14 +22,18 @@ The development-only `llm/skills` Composer plugin restores the Changelog skill
 from the reviewed GitHub source in `skills.json`; generated files are ignored by
 Git. Use `composer skills:show` to inspect it and
 `composer skills:update --from=github` for an explicit refresh within the
-configured version range. Review `skills.json` before changing that range.
+configured `^0.4.0` version range (stable `0.4.x` releases, starting at `0.4.0`).
+With `auto-sync: true`, Composer also synchronizes skills after install/update;
+`--no-scripts` suppresses this automatic step. Review `skills.json` before
+changing that range.
 
 ## Composer dependency skills
 
-The development-only manager restores the consumer skills from these explicitly
-trusted Composer donors. Their minimum versions include the bundled payload;
-trust does not extend to other installed packages. No separate GitHub source
-is used for these libraries.
+The development-only manager restores consumer skills from installed Composer
+packages matching the `fast-forward/*` trust pattern. `trusted-replace` keeps
+packages outside that namespace untrusted, including other direct dependencies.
+The following dependencies have minimum versions that include their bundled
+payload. No separate GitHub source is used for these libraries.
 
 | Composer donor | Minimum version | Dependency scope |
 | --- | --- | --- |
@@ -50,12 +54,26 @@ is used for these libraries.
 The HTTP components remain transitive dependencies; Composer conflicts exclude
 older versions without adding duplicate runtime requirements. The template has
 an explicit development requirement. Composer Installers is not part of the
-installed graph, and the framework's own skill remains in its canonical
-`resources/skills` source rather than being a trusted dependency of itself.
+installed graph. The framework's own skill is registered as an explicit `dir`
+source in `skills.json`, using its canonical `resources/skills` directory. The
+directory adapter derives the donor identity without a package override.
 
 Inspect donors with `composer skills:show` and refresh their payloads with
 `composer skills:update --from=composer`. The existing GitHub source continues
-to manage the Changelog contributor skill independently. Generated copies remain
+to manage the Changelog contributor skill independently, discovering its bundled
+skill from the remote package's Composer metadata without a skill allowlist.
+Refresh the framework's own skill with `composer skills:update --from=dir`.
+Generated copies remain
 ignored. Synchronization does not upgrade runtime dependencies; an installed
 version without a bundled skill contributes no skill. Check installed versions
 and the bundled skill's supported contract before using its instructions.
+
+## PHPDoc and documentation checks
+
+The repository's `.php-cs-fixer.dist.php` loads the consumer autoloader and
+applies the DevTools PHPDoc and file-header rules. This avoids requiring a
+nonexistent nested `vendor/autoload.php` inside the installed DevTools package.
+Run `composer dev-tools` for the complete checks and generated documentation.
+An install with `--no-plugins` skips preparation of the signed phpDocumentor
+executable. When it is missing, run `composer reinstall phpdocumentor/shim`
+with the already approved plugins enabled before building documentation.
