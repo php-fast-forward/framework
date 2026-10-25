@@ -859,9 +859,11 @@
                                             <section class="section " id="frameworkserviceprovider">
             <h1>FrameworkServiceProvider</h1>
 
-            .. php:class:: FastForward\Framework\ServiceProvider\FrameworkServiceProvider
+            
+    <p><code>FastForward\Framework\ServiceProvider\FrameworkServiceProvider</code>
+</p>
 
-
+            
     <p>Aggregates the default Fast Forward framework providers into a single container entry point.
 In the current package, it composes the HTTP stack, the event-dispatcher stack, and the clock utilities
 by delegating to <code>FastForward\Http\ServiceProvider\HttpServiceProvider</code>
@@ -871,6 +873,7 @@ by delegating to <code>FastForward\Http\ServiceProvider\HttpServiceProvider</cod
 <code>FastForward\Clock\ServiceProvider\ClockServiceProvider</code>
 .</p>
 
+            
     <p>The class extends <code>FastForward\Container\ServiceProvider\AggregateServiceProvider</code>
 ,
 so it inherits the provider-merging behavior used across the ecosystem.</p>
@@ -934,9 +937,11 @@ $container = container(FrameworkServiceProvider::class);</code></pre>
             <section class="section " id="constructor">
             <h2>Constructor</h2>
 
-            .. php:method:: __construct()
+            
+    <p><code>__construct()</code>
+</p>
 
-
+            
     <p>Initializes the provider by passing the framework&#039;s default provider list to the parent
 aggregate provider.</p>
 
