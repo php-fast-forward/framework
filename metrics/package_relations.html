@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2026-10-26 19:47:56        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2026-10-29 23:55:34        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -262,16 +262,29 @@
 
     var relations = [
     {
-        "name": "FastForward\\Container\\SkillExamples\\Autowiring",
+        "name": "Example\\Defer",
         "size": 3000,
         "relations": [
+            "FastForward\\Defer",
             "global"
         ]
+    },
+    {
+        "name": "FastForward\\Defer",
+        "size": 3000,
+        "relations": []
     },
     {
         "name": "global",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "FastForward\\Container\\SkillExamples\\Autowiring",
+        "size": 3000,
+        "relations": [
+            "global"
+        ]
     },
     {
         "name": "FastForward\\Container\\SkillExamples\\Configuration",
@@ -280,6 +293,11 @@
     },
     {
         "name": "FastForward\\Container\\SkillExamples\\Composition",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "Example\\Documentation",
         "size": 3000,
         "relations": []
     },
@@ -297,20 +315,32 @@
         "relations": []
     },
     {
-        "name": "Example\\Documentation",
+        "name": "FastForward\\Framework\\ServiceProvider",
+        "size": 3000,
+        "relations": [
+            "FastForward\\Container\\ServiceProvider",
+            "FastForward\\Http\\ServiceProvider",
+            "FastForward\\EventDispatcher\\ServiceProvider",
+            "FastForward\\Clock\\ServiceProvider"
+        ]
+    },
+    {
+        "name": "FastForward\\Container\\ServiceProvider",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "Example\\Defer",
+        "name": "FastForward\\Http\\ServiceProvider",
         "size": 3000,
-        "relations": [
-            "FastForward\\Defer",
-            "global"
-        ]
+        "relations": []
     },
     {
-        "name": "FastForward\\Defer",
+        "name": "FastForward\\EventDispatcher\\ServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "FastForward\\Clock\\ServiceProvider",
         "size": 3000,
         "relations": []
     },
@@ -345,37 +375,7 @@
         ]
     },
     {
-        "name": "FastForward\\Framework\\ServiceProvider",
-        "size": 3000,
-        "relations": [
-            "FastForward\\Container\\ServiceProvider",
-            "FastForward\\Http\\ServiceProvider",
-            "FastForward\\EventDispatcher\\ServiceProvider",
-            "FastForward\\Clock\\ServiceProvider"
-        ]
-    },
-    {
-        "name": "FastForward\\EventDispatcher\\ServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "FastForward\\Http\\ServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "FastForward\\Clock\\ServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "FastForward\\Container\\Factory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "FastForward\\Container\\ServiceProvider",
         "size": 3000,
         "relations": []
     }
