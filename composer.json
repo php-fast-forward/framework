@@ -28,7 +28,7 @@
     "require": {
         "php": "^8.3",
         "fast-forward/clock": "^1.1",
-        "fast-forward/config": "^1.7.3",
+        "fast-forward/config": "^1.7.4",
         "fast-forward/container": "^1.10.1",
         "fast-forward/defer": "^1.1",
         "fast-forward/enum": "^0.2",
