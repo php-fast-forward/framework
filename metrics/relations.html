@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2026-10-29 23:55:34        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2026-11-10 20:23:11        , with PHPMetrics 2.11.0 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -262,20 +262,111 @@
 
     var relations = [
     {
-        "name": "\\Example\\Defer\\RecordingErrorReporter",
-        "size": 3000,
-        "relations": [
-            "\\FastForward\\Defer\\ErrorReporterInterface",
-            "\\Throwable"
-        ]
-    },
-    {
-        "name": "\\FastForward\\Defer\\ErrorReporterInterface",
+        "name": "\\FastForward\\Framework\\ServiceProvider\\FrameworkServiceProvider",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\Throwable",
+        "name": "\\FastForward\\Container\\ServiceProvider\\AggregateServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Http\\ServiceProvider\\HttpServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\EventDispatcher\\ServiceProvider\\EventDispatcherServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Clock\\ServiceProvider\\ClockServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Framework\\Tests\\ServiceProvider\\FrameworkServiceProviderTest",
+        "size": 3000,
+        "relations": [
+            "\\PHPUnit\\Framework\\TestCase",
+            "\\FastForward\\Framework\\ServiceProvider\\FrameworkServiceProvider",
+            "\\FastForward\\EventDispatcher\\ServiceProvider\\EventDispatcherServiceProvider",
+            "\\FastForward\\Http\\ServiceProvider\\HttpServiceProvider",
+            "\\FastForward\\Clock\\ServiceProvider\\ClockServiceProvider",
+            "\\FastForward\\Container\\Factory\\ServiceFactory"
+        ]
+    },
+    {
+        "name": "\\PHPUnit\\Framework\\TestCase",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\Factory\\ServiceFactory",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Framework\\Tests\\ConsumerSkillTest",
+        "size": 3000,
+        "relations": [
+            "\\PHPUnit\\Framework\\TestCase",
+            "\\Symfony\\Component\\Process\\Process"
+        ]
+    },
+    {
+        "name": "\\Symfony\\Component\\Process\\Process",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\Label",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\LabelContract",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\LabelFactory",
+        "size": 3000,
+        "relations": [
+            "\\FastForward\\Container\\SkillExamples\\Composition\\Label"
+        ]
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Configuration\\Greeting",
+        "size": 3000,
+        "relations": [
+            "\\FastForward\\Container\\SkillExamples\\Configuration\\GreetingInterface"
+        ]
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Configuration\\GreetingInterface",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\Cycle",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\OptionalBroken",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\Application",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\RequiredScalar",
         "size": 3000,
         "relations": []
     },
@@ -292,63 +383,7 @@
         "relations": []
     },
     {
-        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\Application",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\Dependency",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\OptionalBroken",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\RequiredScalar",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Autowiring\\Cycle",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Configuration\\Greeting",
-        "size": 3000,
-        "relations": [
-            "\\FastForward\\Container\\SkillExamples\\Configuration\\GreetingInterface"
-        ]
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Configuration\\GreetingInterface",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\LabelFactory",
-        "size": 3000,
-        "relations": [
-            "\\FastForward\\Container\\SkillExamples\\Composition\\Label"
-        ]
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\Label",
-        "size": 3000,
-        "relations": [
-            "\\FastForward\\Container\\SkillExamples\\Composition\\LabelContract"
-        ]
-    },
-    {
-        "name": "\\FastForward\\Container\\SkillExamples\\Composition\\LabelContract",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Example\\Documentation\\Example",
         "size": 3000,
         "relations": []
     },
@@ -381,62 +416,25 @@
         "relations": []
     },
     {
-        "name": "\\FastForward\\Framework\\ServiceProvider\\FrameworkServiceProvider",
+        "name": "\\Example\\Documentation\\Example",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\FastForward\\Container\\ServiceProvider\\AggregateServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Http\\ServiceProvider\\HttpServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\EventDispatcher\\ServiceProvider\\EventDispatcherServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Clock\\ServiceProvider\\ClockServiceProvider",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Framework\\Tests\\ConsumerSkillTest",
+        "name": "\\Example\\Defer\\RecordingErrorReporter",
         "size": 3000,
         "relations": [
-            "\\PHPUnit\\Framework\\TestCase",
-            "\\Symfony\\Component\\Process\\Process"
+            "\\FastForward\\Defer\\ErrorReporterInterface",
+            "\\Throwable"
         ]
     },
     {
-        "name": "\\PHPUnit\\Framework\\TestCase",
+        "name": "\\FastForward\\Defer\\ErrorReporterInterface",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\Symfony\\Component\\Process\\Process",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\FastForward\\Framework\\Tests\\ServiceProvider\\FrameworkServiceProviderTest",
-        "size": 3000,
-        "relations": [
-            "\\PHPUnit\\Framework\\TestCase",
-            "\\FastForward\\Framework\\ServiceProvider\\FrameworkServiceProvider",
-            "\\FastForward\\EventDispatcher\\ServiceProvider\\EventDispatcherServiceProvider",
-            "\\FastForward\\Http\\ServiceProvider\\HttpServiceProvider",
-            "\\FastForward\\Clock\\ServiceProvider\\ClockServiceProvider",
-            "\\FastForward\\Container\\Factory\\ServiceFactory"
-        ]
-    },
-    {
-        "name": "\\FastForward\\Container\\Factory\\ServiceFactory",
+        "name": "\\Throwable",
         "size": 3000,
         "relations": []
     }
