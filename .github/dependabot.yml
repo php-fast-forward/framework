@@ -37,3 +37,7 @@ updates:
     labels:
       - "github-actions"
       - "continuous-integration"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
