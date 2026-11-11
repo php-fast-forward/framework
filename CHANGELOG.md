@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.4] - 2026-11-11
+
+### Changed
+
+- Composer(deps): Update fast-forward/config requirement from ^1.7.3 to ^1.7.4
+
+  Update dependencies: `fast-forward/config`.
+
+  ([#25](https://github.com/php-fast-forward/framework/pull/25), @dependabot[bot])
+
+- GitHub Actions(deps): Bump php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml from 84e154046e07cafa6ac09a9e12434b1ff5dcb5e0 to 1d623bbe24c50b31ee808f84e0c701778ec225ac
+
+  Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
+
+  ([#26](https://github.com/php-fast-forward/framework/pull/26), @dependabot[bot])
+
+- GitHub Actions(deps): Bump php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml from 1d623bbe24c50b31ee808f84e0c701778ec225ac to 0dc64e8ce2a53120047c9475a016dce27ac7ecf6 in the github-actions group
+
+  Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
+
+  ([#28](https://github.com/php-fast-forward/framework/pull/28), @dependabot[bot])
+
+- Composer(deps-dev): Update llm/skills requirement from ^1.15 to ^1.16
+
+  Update dependencies: `llm/skills`.
+
+  ([#30](https://github.com/php-fast-forward/framework/pull/30), @dependabot[bot])
+
+- Group GitHub Actions version updates in one Dependabot pull request. ([#27](https://github.com/php-fast-forward/framework/pull/27))
+
 ## [1.5.3] - 2026-10-26
 
 ### Changed
@@ -126,6 +156,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial package bootstrap, foundational framework scaffolding, and baseline release metadata.
 
 
+[1.5.4]: https://github.com/php-fast-forward/framework/compare/v1.5.3...v1.5.4
 [1.5.3]: https://github.com/php-fast-forward/framework/compare/v1.5.2...v1.5.3
 [1.5.2]: https://github.com/php-fast-forward/framework/compare/v1.5.1...v1.5.2
 [1.5.1]: https://github.com/php-fast-forward/framework/compare/v1.5.0...v1.5.1
