@@ -21,6 +21,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
   ([#26](https://github.com/php-fast-forward/framework/pull/26), @dependabot[bot])
 
+- GitHub Actions(deps): Bump php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml from 1d623bbe24c50b31ee808f84e0c701778ec225ac to 0dc64e8ce2a53120047c9475a016dce27ac7ecf6 in the github-actions group
+
+  Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
+
+  ([#28](https://github.com/php-fast-forward/framework/pull/28), @dependabot[bot])
+
+- Composer(deps-dev): Update llm/skills requirement from ^1.15 to ^1.16
+
+  Update dependencies: `llm/skills`.
+
+  ([#30](https://github.com/php-fast-forward/framework/pull/30), @dependabot[bot])
+
 - Group GitHub Actions version updates in one Dependabot pull request. ([#27](https://github.com/php-fast-forward/framework/pull/27))
 
 ## [1.5.3] - 2026-10-26

@@ -40,7 +40,7 @@
     "require-dev": {
         "fast-forward/dev-tools": "^1.26",
         "fast-forward/phpdoc-bootstrap-template": "^2.2",
-        "llm/skills": "^1.15"
+        "llm/skills": "^1.16"
     },
     "conflict": {
         "fast-forward/http-client": "<1.2.0",
