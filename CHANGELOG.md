@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.4] - 2026-11-10
+## [1.5.4] - 2026-11-11
 
 ### Changed
 
@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Update dependencies: `php-fast-forward/dev-tools/.github/workflows/wiki-direct.yml`.
 
   ([#26](https://github.com/php-fast-forward/framework/pull/26), @dependabot[bot])
+
+- Group GitHub Actions version updates in one Dependabot pull request. ([#27](https://github.com/php-fast-forward/framework/pull/27))
 
 ## [1.5.3] - 2026-10-26
 
