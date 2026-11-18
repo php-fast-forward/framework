@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.4] - 2026-11-17
+## [1.5.4] - 2026-11-18
 
 ### Changed
 
@@ -38,6 +38,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   Update dependencies: `llm/skills`.
 
   ([#31](https://github.com/php-fast-forward/framework/pull/31), @dependabot[bot])
+
+- Composer(deps-dev): Update llm/skills requirement from ^1.17 to ^1.18
+
+  Update dependencies: `llm/skills`.
+
+  ([#32](https://github.com/php-fast-forward/framework/pull/32), @dependabot[bot])
 
 - Group GitHub Actions version updates in one Dependabot pull request. ([#27](https://github.com/php-fast-forward/framework/pull/27))
 
