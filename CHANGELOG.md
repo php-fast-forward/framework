@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Composer(deps-dev): Update llm/skills requirement from ^1.19 to ^1.21
+
+  Update dependencies: `llm/skills`.
+
+  ([#37](https://github.com/php-fast-forward/framework/pull/37), @dependabot[bot])
+
 - Pin the reusable DevTools Wiki workflow to the stable v1.26.0 release so unrelated upstream commits no longer trigger SHA-only dependency updates. ([#35](https://github.com/php-fast-forward/framework/pull/35))
 
 ## [1.5.5] - 2026-11-25
