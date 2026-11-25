@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1795576593">
-  <project timestamp="1795576593" name="Clover Coverage">
+<coverage generated="1795576728">
+  <project timestamp="1795576728" name="Clover Coverage">
     <package name="FastForward\Framework\ServiceProvider">
       <file name="/home/runner/work/framework/framework/src/ServiceProvider/FrameworkServiceProvider.php">
         <class name="FastForward\Framework\ServiceProvider\FrameworkServiceProvider" namespace="FastForward\Framework\ServiceProvider">
